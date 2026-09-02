@@ -38,7 +38,7 @@ export function HomeHero() {
     return () => window.clearInterval(id);
   }, []);
 
-  const slide = slides[index];
+  const slide = slides[index]!;
 
   return (
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-ink">
