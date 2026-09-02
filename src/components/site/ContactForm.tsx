@@ -23,17 +23,19 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [message, setMessage] = useState("");
 
-  function validate(data: Record<string, string>): Errors {
+  function validate(get: (k: string) => string): Errors {
     const e: Errors = {};
-    if (!data.firstName?.trim()) e.firstName = "First name is required.";
-    if (!data.lastName?.trim()) e.lastName = "Last name is required.";
-    if (!data.email?.trim()) e.email = "Email is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) e.email = "Enter a valid email address.";
-    if (!data.phone?.trim()) e.phone = "Phone number is required.";
-    else if (data.phone.replace(/[^\d]/g, "").length < 7) e.phone = "Enter a valid phone number.";
-    if (!data.interest?.trim()) e.interest = "Select a product or service.";
-    if (!data.message?.trim()) e.message = "Please tell us how we can help.";
-    else if (data.message.trim().length < 10) e.message = "Please add a little more detail.";
+    if (!get("firstName")) e["firstName"] = "First name is required.";
+    if (!get("lastName")) e["lastName"] = "Last name is required.";
+    if (!get("email")) e["email"] = "Email is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(get("email")))
+      e["email"] = "Enter a valid email address.";
+    if (!get("phone")) e["phone"] = "Phone number is required.";
+    else if (get("phone").replace(/[^\d]/g, "").length < 7)
+      e["phone"] = "Enter a valid phone number.";
+    if (!get("interest")) e["interest"] = "Select a product or service.";
+    if (!get("message")) e["message"] = "Please tell us how we can help.";
+    else if (get("message").length < 10) e["message"] = "Please add a little more detail.";
     return e;
   }
 
@@ -41,8 +43,9 @@ export function ContactForm() {
     event.preventDefault();
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    const get = (key: string) => (data[key] ?? "").toString().trim();
 
-    const found = validate(data);
+    const found = validate(get);
     setErrors(found);
     if (Object.keys(found).length > 0) {
       setStatus("idle");
@@ -64,13 +67,13 @@ export function ContactForm() {
         // No form service connected yet: hand the enquiry to the visitor's
         // email client. Set `formEndpoint` in src/lib/site.ts to send directly.
         const body = [
-          `Name: ${data.firstName} ${data.lastName}`,
-          `Email: ${data.email}`,
-          `Phone: ${data.phone}`,
-          `Company: ${data.company || "-"}`,
-          `Product / Service: ${data.interest}`,
+          `Name: ${get("firstName")} ${get("lastName")}`,
+          `Email: ${get("email")}`,
+          `Phone: ${get("phone")}`,
+          `Company: ${get("company") || "-"}`,
+          `Product / Service: ${get("interest")}`,
           "",
-          data.message,
+          get("message"),
         ].join("\n");
         window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
           "Website enquiry — Electrosys",
