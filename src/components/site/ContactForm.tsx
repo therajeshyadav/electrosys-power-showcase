@@ -129,7 +129,7 @@ export function ContactForm() {
             id="interest"
             name="interest"
             defaultValue=""
-            aria-invalid={Boolean(errors.interest)}
+            aria-invalid={Boolean(errors["interest"])}
             className={inputClass}
           >
             <option value="" disabled>
@@ -151,8 +151,8 @@ export function ContactForm() {
             </optgroup>
             <option value="Other">Other / not sure</option>
           </select>
-          {errors.interest && (
-            <p className="mt-2 text-xs text-destructive">{errors.interest}</p>
+          {errors["interest"] && (
+            <p className="mt-2 text-xs text-destructive">{errors["interest"]}</p>
           )}
         </div>
 
@@ -164,12 +164,12 @@ export function ContactForm() {
             id="message"
             name="message"
             rows={5}
-            aria-invalid={Boolean(errors.message)}
+            aria-invalid={Boolean(errors["message"])}
             className={inputClass}
             placeholder="Tell us about your site, load and timescales."
           />
-          {errors.message && (
-            <p className="mt-2 text-xs text-destructive">{errors.message}</p>
+          {errors["message"] && (
+            <p className="mt-2 text-xs text-destructive">{errors["message"]}</p>
           )}
         </div>
       </div>
