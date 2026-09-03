@@ -1,3 +1,13 @@
+import type { LucideIcon } from "lucide-react";
+import {
+  BatteryCharging,
+  Headphones,
+  PlugZap,
+  Replace,
+  ShieldCheck,
+  Wrench,
+  Lightbulb,
+} from "lucide-react";
 import installation from "@/assets/service-installation.jpg";
 import battery from "@/assets/service-battery.jpg";
 import maintenance from "@/assets/service-maintenance.jpg";
@@ -9,6 +19,7 @@ export type Service = {
   short: string;
   description: string;
   image: string;
+  icon: LucideIcon;
   points: string[];
 };
 
@@ -20,6 +31,7 @@ export const services: Service[] = [
     description:
       "We plan and install uninterruptible power supply systems for offices, industrial sites and critical facilities — from single-phase rack units to three-phase installations. Placeholder copy pending final client information.",
     image: installation,
+    icon: PlugZap,
     points: [
       "Site survey and load assessment",
       "System specification and sizing",
@@ -34,6 +46,7 @@ export const services: Service[] = [
     description:
       "Planned service visits, functional testing and reporting so your UPS estate stays dependable through its working life. Placeholder copy pending final client information.",
     image: maintenance,
+    icon: Wrench,
     points: [
       "Scheduled service visits",
       "Functional and load testing",
@@ -48,6 +61,7 @@ export const services: Service[] = [
     description:
       "Battery strings age quietly. We test, measure and report so weak cells are identified before they affect autonomy. Placeholder copy pending final client information.",
     image: battery,
+    icon: BatteryCharging,
     points: [
       "Impedance and voltage testing",
       "String condition reporting",
@@ -62,25 +76,12 @@ export const services: Service[] = [
     description:
       "Supply and replacement of end-of-life batteries from trusted manufacturers, planned around your operating hours. Placeholder copy pending final client information.",
     image: battery,
+    icon: Replace,
     points: [
       "Supply from partner manufacturers",
       "Planned out-of-hours changeover",
       "Post-replacement testing",
       "Recycling of removed units",
-    ],
-  },
-  {
-    slug: "preventive-maintenance",
-    name: "Preventive Maintenance",
-    short: "Structured maintenance programmes that reduce unplanned interruptions.",
-    description:
-      "Agreed maintenance schedules built around your site, with inspection routines and clear records. Placeholder copy pending final client information.",
-    image: maintenance,
-    points: [
-      "Tailored maintenance schedule",
-      "Inspection and cleaning routines",
-      "Component wear tracking",
-      "Recommendations and priorities",
     ],
   },
   {
@@ -90,6 +91,7 @@ export const services: Service[] = [
     description:
       "Responsive support for faults, alarms and configuration questions from people familiar with your equipment. Placeholder copy pending final client information.",
     image: support,
+    icon: Headphones,
     points: [
       "Fault diagnosis and callouts",
       "Alarm and event interpretation",
@@ -98,12 +100,28 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "power-solution-consultation",
-    name: "Power Solution Consultation",
+    slug: "preventive-maintenance",
+    name: "Preventive Maintenance",
+    short: "Structured maintenance programmes that reduce unplanned interruptions.",
+    description:
+      "Agreed maintenance schedules built around your site, with inspection routines and clear records. Placeholder copy pending final client information.",
+    image: maintenance,
+    icon: ShieldCheck,
+    points: [
+      "Tailored maintenance schedule",
+      "Inspection and cleaning routines",
+      "Component wear tracking",
+      "Recommendations and priorities",
+    ],
+  },
+  {
+    slug: "power-solution-support",
+    name: "Power Solution Support",
     short: "Independent guidance on the right power protection for your site.",
     description:
-      "Consultation on topology, redundancy, autonomy and product selection before you commit to a system. Placeholder copy pending final client information.",
+      "Support and guidance on topology, redundancy, autonomy and product selection before you commit to a system. Placeholder copy pending final client information.",
     image: installation,
+    icon: Lightbulb,
     points: [
       "Requirement and risk review",
       "Topology and redundancy options",

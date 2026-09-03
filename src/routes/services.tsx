@@ -53,7 +53,7 @@ function Services() {
 
         <div className="mt-16 space-y-24 sm:space-y-32">
           {services.map((service, i) => (
-            <div key={service.slug} className="container-x">
+            <div key={service.slug} id={service.slug} className="container-x scroll-mt-28">
               <div
                 className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-20 ${
                   i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
