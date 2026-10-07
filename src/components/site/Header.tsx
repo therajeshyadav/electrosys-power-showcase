@@ -52,8 +52,7 @@ export function Header() {
     closeTimer.current = setTimeout(() => setServicesOpen(false), 140);
   };
 
-  const isActive = (to: string) =>
-    to === "/" ? pathname === "/" : pathname.startsWith(to);
+  const isActive = (to: string) => (to === "/" ? pathname === "/" : pathname.startsWith(to));
 
   return (
     <header
@@ -107,47 +106,25 @@ export function Header() {
                   {servicesOpen && (
                     <motion.div
                       key="services-menu"
-                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                      transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute left-1/2 top-full z-50 mt-3 w-[26rem] -translate-x-1/2 origin-top rounded-3xl border border-border bg-card p-2.5 shadow-card"
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 4 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute left-0 top-full z-50 mt-2 min-w-[240px] rounded-xl border border-border bg-card p-2 shadow-lg"
                     >
-                      <span
-                        aria-hidden="true"
-                        className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 rounded-[3px] border-l border-t border-border bg-card"
-                      />
-                      <ul className="relative flex flex-col gap-0.5">
-                        {services.map((service, i) => {
-                          const Icon = service.icon;
-                          return (
-                            <motion.li
-                              key={service.slug}
-                              initial={{ opacity: 0, x: -8 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.03 * i, duration: 0.22 }}
+                      <ul className="flex flex-col gap-0.5">
+                        {services.map((service) => (
+                          <li key={service.slug}>
+                            <Link
+                              to="/services"
+                              hash={service.slug}
+                              onClick={() => setServicesOpen(false)}
+                              className="block rounded-lg px-3.5 py-2.5 text-[0.85rem] font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
                             >
-                              <Link
-                                to="/services"
-                                hash={service.slug}
-                                onClick={() => setServicesOpen(false)}
-                                className="group flex items-start gap-3 rounded-2xl px-3 py-2.5 transition-colors duration-200 hover:bg-primary-soft"
-                              >
-                                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary-deep transition-colors duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
-                                  <Icon className="h-4 w-4" aria-hidden="true" />
-                                </span>
-                                <span className="min-w-0">
-                                  <span className="block font-display text-sm font-semibold text-foreground">
-                                    {service.name}
-                                  </span>
-                                  <span className="mt-0.5 block text-xs leading-relaxed text-muted-foreground">
-                                    {service.short}
-                                  </span>
-                                </span>
-                              </Link>
-                            </motion.li>
-                          );
-                        })}
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </motion.div>
                   )}
@@ -238,9 +215,7 @@ export function Header() {
                           type="button"
                           onClick={() => setMobileServicesOpen((v) => !v)}
                           aria-expanded={mobileServicesOpen}
-                          aria-label={
-                            mobileServicesOpen ? "Collapse services" : "Expand services"
-                          }
+                          aria-label={mobileServicesOpen ? "Collapse services" : "Expand services"}
                           className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-foreground"
                         >
                           <ChevronDown
@@ -260,31 +235,21 @@ export function Header() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                            className="overflow-hidden"
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                            className="overflow-hidden pl-3 pb-2"
                           >
-                            <li className="h-1" aria-hidden="true" />
-                            {services.map((service) => {
-                              const Icon = service.icon;
-                              return (
-                                <li key={service.slug}>
-                                  <Link
-                                    to="/services"
-                                    hash={service.slug}
-                                    onClick={() => setOpen(false)}
-                                    className="flex items-center gap-3 rounded-2xl px-2 py-3 transition-colors duration-200 active:bg-primary-soft"
-                                  >
-                                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary-deep">
-                                      <Icon className="h-4 w-4" aria-hidden="true" />
-                                    </span>
-                                    <span className="min-w-0 text-sm font-semibold text-foreground">
-                                      {service.name}
-                                    </span>
-                                  </Link>
-                                </li>
-                              );
-                            })}
-                            <li className="h-2" aria-hidden="true" />
+                            {services.map((service) => (
+                              <li key={service.slug}>
+                                <Link
+                                  to="/services"
+                                  hash={service.slug}
+                                  onClick={() => setOpen(false)}
+                                  className="block py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary active:text-primary"
+                                >
+                                  {service.name}
+                                </Link>
+                              </li>
+                            ))}
                           </motion.ul>
                         )}
                       </AnimatePresence>

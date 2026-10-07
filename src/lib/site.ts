@@ -32,8 +32,7 @@ export const site = {
    * Google Maps embed URL. Replace the query with the client's address once
    * confirmed — no API key required for the standard embed.
    */
-  mapEmbedUrl:
-    "https://www.google.com/maps?q=industrial+park&output=embed",
+  mapEmbedUrl: "https://www.google.com/maps?q=industrial+park&output=embed",
 
   /**
    * Contact form endpoint (e.g. Formspree, Web3Forms, Getform).

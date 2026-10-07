@@ -17,26 +17,16 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <Reveal
-      className={cn(
-        "max-w-3xl",
-        align === "center" && "mx-auto text-center",
-        className,
-      )}
-    >
+    <Reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
         <span className="eyebrow">
           <span className="h-px w-8 bg-primary" aria-hidden="true" />
           {eyebrow}
         </span>
       )}
-      <h2 className="mt-5 text-3xl leading-[1.08] font-bold sm:text-4xl lg:text-5xl">
-        {title}
-      </h2>
+      <h2 className="mt-5 text-3xl leading-[1.08] font-bold sm:text-4xl lg:text-5xl">{title}</h2>
       {intro && (
-        <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-          {intro}
-        </p>
+        <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">{intro}</p>
       )}
     </Reveal>
   );
@@ -105,9 +95,7 @@ export function ContactCta({
             <h2 className="mt-5 text-3xl leading-tight font-bold text-ink-foreground sm:text-4xl lg:text-5xl">
               {title}
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-foreground/70">
-              {body}
-            </p>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-foreground/70">{body}</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/contact"

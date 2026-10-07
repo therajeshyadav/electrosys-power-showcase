@@ -32,9 +32,18 @@ export const brands: Brand[] = [
     partnership:
       "Electrosys supplies, installs and supports Vertiv UPS systems as part of our power protection portfolio. Partnership details to be confirmed with the client.",
     solutions: [
-      { title: "Data & IT rooms", body: "Rack and tower systems for server rooms and comms cabinets." },
-      { title: "Industrial process", body: "Three-phase protection for continuous production environments." },
-      { title: "Scalable capacity", body: "Modular configurations that grow with the connected load." },
+      {
+        title: "Data & IT rooms",
+        body: "Rack and tower systems for server rooms and comms cabinets.",
+      },
+      {
+        title: "Industrial process",
+        body: "Three-phase protection for continuous production environments.",
+      },
+      {
+        title: "Scalable capacity",
+        body: "Modular configurations that grow with the connected load.",
+      },
     ],
     products: [
       {
@@ -74,7 +83,10 @@ export const brands: Brand[] = [
     partnership:
       "Electrosys works with Riello UPS products across supply, installation and ongoing maintenance. Partnership details to be confirmed with the client.",
     solutions: [
-      { title: "Commercial buildings", body: "Protection for office IT, security and building systems." },
+      {
+        title: "Commercial buildings",
+        body: "Protection for office IT, security and building systems.",
+      },
       { title: "High efficiency", body: "Operating modes designed to reduce running losses." },
       { title: "Service ready", body: "Configurations that support planned maintenance access." },
     ],

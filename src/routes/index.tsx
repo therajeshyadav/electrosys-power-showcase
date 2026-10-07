@@ -87,9 +87,9 @@ function Home() {
             />
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-                From specification through to long-term maintenance, Electrosys works
-                with businesses that cannot afford unplanned interruptions. Placeholder
-                copy pending final company information.
+                From specification through to long-term maintenance, Electrosys works with
+                businesses that cannot afford unplanned interruptions. Placeholder copy pending
+                final company information.
               </p>
               <Link
                 to="/about"
@@ -189,9 +189,7 @@ function Home() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-4 text-lg font-bold">{point.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {point.body}
-                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{point.body}</p>
                 </motion.div>
               ))}
             </Stagger>

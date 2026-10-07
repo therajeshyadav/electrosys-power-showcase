@@ -48,23 +48,19 @@ export function Preloader() {
           <AnimatePresence>
             {phase === "logo" && (
               <motion.div
-                className="flex flex-col items-center"
+                className="flex flex-col items-center rounded-2xl bg-white/95 px-8 py-5 shadow-2xl backdrop-blur-sm"
                 initial={{ opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.04 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                <LogoMark className="h-14 w-14 text-primary" />
+                <img
+                  src="/logo.png"
+                  alt="Electrosys"
+                  className="h-14 w-auto object-contain sm:h-16"
+                />
                 <motion.span
-                  className="mt-6 font-display text-sm font-extrabold tracking-[0.4em] text-ink-foreground"
-                  initial={{ opacity: 0, letterSpacing: "0.6em" }}
-                  animate={{ opacity: 1, letterSpacing: "0.4em" }}
-                  transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  ELECTROSYS
-                </motion.span>
-                <motion.span
-                  className="mt-6 block h-px w-24 origin-left bg-primary"
+                  className="mt-4 block h-0.5 w-24 origin-left bg-primary"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 1.1, ease: "easeInOut" }}

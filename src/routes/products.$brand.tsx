@@ -1,12 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { motion } from "motion/react";
-import {
-  Reveal,
-  RevealImage,
-  Stagger,
-  staggerChild,
-} from "@/components/site/Reveal";
+import { Reveal, RevealImage, Stagger, staggerChild } from "@/components/site/Reveal";
 import { ContactCta, SectionHeading } from "@/components/site/Sections";
 import { getBrand, relatedBrands } from "@/data/brands";
 import { productWhatsAppHref } from "@/lib/site";
@@ -21,10 +16,7 @@ export const Route = createFileRoute("/products/$brand")({
   head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [
-          { title: "Brand not found — Electrosys" },
-          { name: "robots", content: "noindex" },
-        ],
+        meta: [{ title: "Brand not found — Electrosys" }, { name: "robots", content: "noindex" }],
       };
     }
     const { brand } = loaderData;
@@ -112,14 +104,9 @@ function BrandPage() {
       {/* Partnership */}
       <section className="py-20 sm:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
-          <SectionHeading
-            eyebrow="Partnership"
-            title={`Electrosys & ${brand.name}`}
-          />
+          <SectionHeading eyebrow="Partnership" title={`Electrosys & ${brand.name}`} />
           <Reveal delay={0.08}>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              {brand.partnership}
-            </p>
+            <p className="text-lg leading-relaxed text-muted-foreground">{brand.partnership}</p>
             <Link
               to="/contact"
               className="group mt-8 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[0.75rem] font-bold tracking-[0.14em] uppercase text-background transition-transform duration-200 hover:-translate-y-0.5"
@@ -146,9 +133,7 @@ function BrandPage() {
                   <Check className="h-4 w-4 text-primary-deep" aria-hidden="true" />
                 </span>
                 <h3 className="mt-5 text-lg font-bold">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {s.body}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               </motion.div>
             ))}
           </Stagger>
@@ -241,9 +226,7 @@ function BrandPage() {
                   <span className="font-display text-xl font-extrabold tracking-[0.14em] group-hover:text-primary-deep">
                     {b.wordmark}
                   </span>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {b.tagline}
-                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{b.tagline}</p>
                 </Link>
               </motion.div>
             ))}

@@ -89,18 +89,23 @@ export function ContactForm() {
       form.reset();
     } catch {
       setStatus("error");
-      setMessage(
-        `We couldn't send your enquiry. Please email us directly at ${site.email}.`,
-      );
+      setMessage(`We couldn't send your enquiry. Please email us directly at ${site.email}.`);
     }
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-3xl border border-border bg-card p-7 sm:p-10">
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      className="rounded-3xl border border-border bg-card p-7 sm:p-10"
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         {fields.map((f) => (
           <div key={f.name} className={f.half ? "" : "sm:col-span-2"}>
-            <label htmlFor={f.name} className="mb-2 block text-[0.7rem] font-bold tracking-[0.14em] uppercase text-muted-foreground">
+            <label
+              htmlFor={f.name}
+              className="mb-2 block text-[0.7rem] font-bold tracking-[0.14em] uppercase text-muted-foreground"
+            >
               {f.label} {f.required && <span className="text-primary-deep">*</span>}
             </label>
             <input
@@ -122,7 +127,10 @@ export function ContactForm() {
         ))}
 
         <div className="sm:col-span-2">
-          <label htmlFor="interest" className="mb-2 block text-[0.7rem] font-bold tracking-[0.14em] uppercase text-muted-foreground">
+          <label
+            htmlFor="interest"
+            className="mb-2 block text-[0.7rem] font-bold tracking-[0.14em] uppercase text-muted-foreground"
+          >
             Product / Service <span className="text-primary-deep">*</span>
           </label>
           <select
@@ -157,7 +165,10 @@ export function ContactForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="message" className="mb-2 block text-[0.7rem] font-bold tracking-[0.14em] uppercase text-muted-foreground">
+          <label
+            htmlFor="message"
+            className="mb-2 block text-[0.7rem] font-bold tracking-[0.14em] uppercase text-muted-foreground"
+          >
             Message <span className="text-primary-deep">*</span>
           </label>
           <textarea

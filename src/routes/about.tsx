@@ -31,9 +31,18 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  { title: "Reliability", body: "Work is planned, tested and documented so systems behave predictably." },
-  { title: "Integrity", body: "Honest recommendations, including when replacement is not yet required." },
-  { title: "Expertise", body: "Engineering knowledge applied to specification, installation and support." },
+  {
+    title: "Reliability",
+    body: "Work is planned, tested and documented so systems behave predictably.",
+  },
+  {
+    title: "Integrity",
+    body: "Honest recommendations, including when replacement is not yet required.",
+  },
+  {
+    title: "Expertise",
+    body: "Engineering knowledge applied to specification, installation and support.",
+  },
   { title: "Responsiveness", body: "Clear communication and prompt attention when issues arise." },
 ];
 
@@ -77,9 +86,9 @@ function About() {
             />
             <Reveal delay={0.1}>
               <p className="mt-6 leading-relaxed text-muted-foreground">
-                Our work covers specification, supply, installation, maintenance and
-                technical support. Company history, team size and experience details are
-                placeholders until confirmed by the client.
+                Our work covers specification, supply, installation, maintenance and technical
+                support. Company history, team size and experience details are placeholders until
+                confirmed by the client.
               </p>
             </Reveal>
           </div>
@@ -94,9 +103,8 @@ function About() {
               Keep essential systems running, whatever the supply does.
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              We aim to give every client a power installation they can rely on, with
-              service that continues long after commissioning. Final mission statement
-              pending client approval.
+              We aim to give every client a power installation they can rely on, with service that
+              continues long after commissioning. Final mission statement pending client approval.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="rounded-3xl bg-ink p-10 text-ink-foreground">
@@ -105,9 +113,8 @@ function About() {
               Assess the load. Specify honestly. Support continuously.
             </h2>
             <p className="mt-6 leading-relaxed text-ink-foreground/70">
-              Every site is different. We start with the actual load and risk profile
-              before recommending equipment, then stay involved through the life of the
-              installation.
+              Every site is different. We start with the actual load and risk profile before
+              recommending equipment, then stay involved through the life of the installation.
             </p>
           </Reveal>
         </div>
@@ -124,9 +131,7 @@ function About() {
                 className="rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card"
               >
                 <h3 className="text-lg font-bold">{v.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {v.body}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
               </motion.div>
             ))}
           </Stagger>

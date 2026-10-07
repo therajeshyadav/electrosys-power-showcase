@@ -19,9 +19,7 @@ export function BrandCard({ brand }: { brand: Brand }) {
           <span className="mt-2 block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-muted-foreground">
             {brand.category}
           </span>
-          <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-            {brand.tagline}
-          </p>
+          <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{brand.tagline}</p>
         </div>
         <span className="mt-8 inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-[0.16em] uppercase text-primary-deep">
           View brand

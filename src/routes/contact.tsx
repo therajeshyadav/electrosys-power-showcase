@@ -3,13 +3,7 @@ import { Mail, MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { PageHero, SectionHeading } from "@/components/site/Sections";
 import { ContactForm } from "@/components/site/ContactForm";
-import {
-  addressLines,
-  mailHref,
-  site,
-  telHref,
-  whatsappHref,
-} from "@/lib/site";
+import { addressLines, mailHref, site, telHref, whatsappHref } from "@/lib/site";
 import hero2 from "@/assets/hero-2.jpg";
 
 export const Route = createFileRoute("/contact")({

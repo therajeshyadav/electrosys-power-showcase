@@ -186,11 +186,11 @@ However, these sections should NOT automatically make PRODUCTS or CONTACT appear
 
 The Home page should feel like one continuous premium landing experience.
 
---------------------------------------------------
+---
 
 HOME PAGE INITIAL LOADING
 
---------------------------------------------------
+---
 
 Create a cinematic initial loading experience.
 
@@ -218,11 +218,11 @@ This transition should feel premium and similar to the provided reference screen
 
 Do NOT make it overly long.
 
---------------------------------------------------
+---
 
 HOME HERO
 
---------------------------------------------------
+---
 
 Create a full-screen premium hero section.
 
@@ -468,11 +468,11 @@ Do NOT add:
 
 This is a product showcase and enquiry website.
 
---------------------------------------------------
+---
 
 INDIVIDUAL BRAND PRODUCT PAGES
 
---------------------------------------------------
+---
 
 Every brand should have its own detailed page.
 
@@ -1046,23 +1046,13 @@ Contact Us
 
 Then create the reusable brand/product detail page system for individual supplier brands.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/554fa0d4-22d6-4eaa-b2ed-45b272aa5e52).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Then create the reusable brand/product detail page system for individual supplier brands.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need Node.js and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
