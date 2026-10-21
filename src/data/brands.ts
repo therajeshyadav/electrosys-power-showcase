@@ -154,43 +154,6 @@ export const brands: Brand[] = [
     ],
   },
   {
-    slug: "ablerex-ups",
-    name: "Ablerex",
-    shortName: "Ablerex",
-    category: "UPS Systems",
-    tagline: "Innovative Power Quality & High-Efficiency UPS Solutions",
-    description:
-      "Ablerex specializes in advanced power conversion technologies, active power filters, and ultra-reliable UPS topologies for critical infrastructure.",
-    partnershipTitle: "Electrosys & Ablerex Partnership",
-    partnershipBody:
-      "Electrosys pairs Ablerex power quality technology with customized engineering for challenging electrical environments.",
-    partnershipPoints: [
-      "Active Power Filtering & Harmonic Mitigation",
-      "High-efficiency transformerless architectures",
-      "Robust electrical safety standards",
-      "Modular three-phase expansion options",
-    ],
-    solutions: [
-      "Power Quality & Harmonic Control",
-      "Telecom & Networking Systems",
-      "Precision Laboratory Instruments",
-      "Commercial IT Infrastructure",
-    ],
-    products: [
-      {
-        name: "Ablerex Taurus Series 3-Phase",
-        description:
-          "Online double conversion three-phase UPS providing clean, continuous power for mid to large commercial sites.",
-        image: upsImage,
-        capacity: "Capacity range: 10 kVA – 120 kVA",
-        specs: [
-          { label: "Topology", value: "Online Double Conversion" },
-          { label: "Parallel Capability", value: "Up to 4 units" },
-        ],
-      },
-    ],
-  },
-  {
     slug: "eaton-ups",
     name: "Eaton",
     shortName: "Eaton",
@@ -223,80 +186,6 @@ export const brands: Brand[] = [
         specs: [
           { label: "Efficiency", value: "Up to 95% in online mode" },
           { label: "Battery", value: "ABM technology" },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "eltek-ups",
-    name: "Eltek",
-    shortName: "Eltek",
-    category: "UPS Systems",
-    tagline: "High-Efficiency Power Conversion for Telecom & Industrial Power",
-    description:
-      "Eltek, a Delta Group Company, is a global leader in high-efficiency DC power systems, modular inverters, and industrial rectifiers.",
-    partnershipTitle: "Electrosys & Eltek Partnership",
-    partnershipBody:
-      "Electrosys deploys Eltek modular power shelves and industrial inverters for rail, telecom, utility substations, and offshore sites.",
-    partnershipPoints: [
-      "Flatpack2 HE high efficiency modular rectifiers",
-      "Dual input AC/DC hybrid architectures",
-      "High reliability in harsh ambient conditions",
-      "Smart controller remote telemetry",
-    ],
-    solutions: [
-      "Telecom & Wireless Base Stations",
-      "Power Utilities & Substations",
-      "Railway Signaling & Infrastructure",
-      "Renewable Energy & Microgrids",
-    ],
-    products: [
-      {
-        name: "Eltek Flatpack2 Modular Power System",
-        description:
-          "Compact, modular rectifier and inverter system delivering unmatched electrical efficiency and flexibility.",
-        image: upsImage,
-        capacity: "Scalable modular capacity",
-        specs: [
-          { label: "Efficiency", value: "96.5% High Efficiency" },
-          { label: "Architecture", value: "Modular hot-pluggable" },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "cet-power",
-    name: "CE+T Power",
-    shortName: "CE+T",
-    category: "UPS Systems",
-    tagline: "Modular Inverters & Multi-Directional Power Converters",
-    description:
-      "CE+T Power designs award-winning modular inverters and energy management solutions ensuring zero power interruption for critical operations.",
-    partnershipTitle: "Electrosys & CE+T Power Partnership",
-    partnershipBody:
-      "We provide CE+T modular inverter and bidirectional converter installations with full redundancy and battery bank integration.",
-    partnershipPoints: [
-      "True modular inverter architecture with N+1 redundancy",
-      "TSI (True Sine Wave Integrated) technology",
-      "Zero transfer time between AC and DC sources",
-      "Galvanic isolation and harsh site compatibility",
-    ],
-    solutions: [
-      "Telecom Central Offices",
-      "Industrial Automation & Process Power",
-      "Railway Power Distribution",
-      "Renewable & Energy Storage Integration",
-    ],
-    products: [
-      {
-        name: "CE+T Sierra Modular Power Converter",
-        description:
-          "Multi-directional power converter offering bidirectional power flow between AC and DC grids with battery backup.",
-        image: upsImage,
-        capacity: "Capacity range: 2.5 kW – 300 kW",
-        specs: [
-          { label: "Topology", value: "Bidirectional Multi-port" },
-          { label: "Isolation", value: "Galvanic Isolation" },
         ],
       },
     ],
@@ -338,8 +227,82 @@ export const brands: Brand[] = [
       },
     ],
   },
+  {
+    slug: "delta-ups",
+    name: "Delta",
+    shortName: "Delta",
+    category: "UPS Systems",
+    tagline: "Intelligent, Modular & High-Efficiency Power Solutions",
+    description:
+      "Delta Electronics is a global leader in power and thermal management solutions, offering high-performance Amplon, Ultron, and Modulon UPS systems with leading electrical efficiency and modular scalability.",
+    partnershipTitle: "Electrosys & Delta Partnership",
+    partnershipBody:
+      "Electrosys configures, deploys, and services Delta's entire family of single-phase and three-phase UPS systems for data centers, telecommunications, and industrial automation.",
+    partnershipPoints: [
+      "High AC-AC efficiency up to 96% and ECO mode up to 99%",
+      "Modulon three-phase modular architecture with hot-swappable power modules",
+      "Advanced DSP control and high input power factor (>0.99)",
+      "Built-in maintenance bypass and intelligent battery management",
+    ],
+    solutions: [
+      "Mission-Critical Data Centers",
+      "Industrial Automation & Robotics",
+      "Telecom & Edge Facilities",
+      "Healthcare & Diagnostics",
+    ],
+    products: [
+      {
+        name: "Delta Ultron HPH / DPS Series 3-Phase UPS",
+        description:
+          "High-efficiency online double-conversion UPS delivering reliable power protection and low total cost of ownership for commercial and industrial facilities.",
+        image: upsImage,
+        capacity: "Capacity range: 20 kVA – 500 kVA",
+        specs: [
+          { label: "Topology", value: "Online Double Conversion" },
+          { label: "Efficiency", value: "Up to 96% AC-AC" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "hitachi-ups",
+    name: "Hitachi",
+    shortName: "Hitachi",
+    category: "UPS Systems",
+    tagline: "Pioneering Industrial Power Electronics & Critical UPS Systems",
+    description:
+      "Hitachi Hi-Rel Power Electronics brings decades of engineering excellence in industrial and enterprise UPS systems, manufactured to rigorous Japanese quality standards.",
+    partnershipTitle: "Electrosys & Hitachi Partnership",
+    partnershipBody:
+      "We supply, commission, and maintain Hitachi's industrial-grade i4 and enterprise i6 UPS series for heavy manufacturing, power utilities, and mission-critical enterprise hubs.",
+    partnershipPoints: [
+      "Robust transformer-based and transformerless industrial architectures",
+      "High fault-clearing capability for rugged industrial grid environments",
+      "Advanced digital signal processors (DSP) with IGBT PWM technology",
+      "Extensive diagnostics, harmonic control, and SCADA connectivity",
+    ],
+    solutions: [
+      "Heavy Manufacturing & Steel",
+      "Oil, Gas & Petrochemical Plants",
+      "Banking & Enterprise Data Hubs",
+      "Process Automation",
+    ],
+    products: [
+      {
+        name: "Hitachi i6 Series Online UPS",
+        description:
+          "Enterprise grade high-availability online double conversion UPS engineered for maximum reliability in mission-critical applications.",
+        image: upsImage,
+        capacity: "Capacity range: 10 kVA – 400 kVA",
+        specs: [
+          { label: "Technology", value: "IGBT PWM with DSP Control" },
+          { label: "Overload Capability", value: "150% for 1 minute" },
+        ],
+      },
+    ],
+  },
 
-  // --- INDUSTRIAL BATTERY BRANDS (7 Brands) ---
+  // --- INDUSTRIAL BATTERY BRANDS ---
   {
     slug: "fiamm",
     name: "FIAMM",
@@ -378,43 +341,6 @@ export const brands: Brand[] = [
     ],
   },
   {
-    slug: "yuasa",
-    name: "Yuasa",
-    shortName: "Yuasa",
-    category: "Industrial Batteries",
-    tagline: "World-Class Standby VRLA Battery Performance",
-    description:
-      "GS Yuasa is one of the world's largest and most trusted manufacturers of lead-acid batteries, providing gold-standard reliability for UPS systems.",
-    partnershipTitle: "Electrosys & Yuasa Partnership",
-    partnershipBody:
-      "We provide genuine Yuasa NP and EN series batteries with matched string impedance testing and preventive replacement programs.",
-    partnershipPoints: [
-      "Industry benchmark for valve-regulated lead acid cells",
-      "Superior float life and gas recombination efficiency",
-      "Flame retardant UL94:V0 case options",
-      "Proven track record in continuous mission-critical sites",
-    ],
-    solutions: [
-      "Data Center UPS Battery Strings",
-      "Medical Equipment Standby",
-      "Fire Alarms & Security Systems",
-      "Industrial Instrumentation",
-    ],
-    products: [
-      {
-        name: "Yuasa NP / NPL Industrial VRLA",
-        description:
-          "Maintenance-free sealed lead-acid battery designed for long float standby life in UPS and emergency power.",
-        image: batteryImage,
-        capacity: "Capacity: 12V 24Ah – 200Ah",
-        specs: [
-          { label: "Technology", value: "VRLA AGM" },
-          { label: "Recombination", value: "Over 99% efficient" },
-        ],
-      },
-    ],
-  },
-  {
     slug: "csb-battery",
     name: "CSB Battery",
     shortName: "CSB",
@@ -447,43 +373,6 @@ export const brands: Brand[] = [
         specs: [
           { label: "Design Life", value: "10 Years Standby" },
           { label: "Technology", value: "Absorbent Glass Mat (AGM)" },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "enersys",
-    name: "EnerSys",
-    shortName: "EnerSys",
-    category: "Industrial Batteries",
-    tagline: "Global Leader in Stored Energy Solutions for Industrial Applications",
-    description:
-      "EnerSys manufactures industry-defining brands like DataSafe, PowerSafe, and Genesis, delivering premium stored energy solutions.",
-    partnershipTitle: "Electrosys & EnerSys Partnership",
-    partnershipBody:
-      "We engineer DataSafe HX and PowerSafe battery systems for large-scale enterprise UPS installations, utilities, and telecom backbones.",
-    partnershipPoints: [
-      "DataSafe HX top-terminal and front-terminal configurations",
-      "Pure lead Thin Plate (TPPL) technology options",
-      "High energy density with reduced space requirements",
-      "Exceptional float life and high-temperature tolerance",
-    ],
-    solutions: [
-      "Hyperscale & Colocation Data Centers",
-      "Power Generation & Substations",
-      "Industrial UPS Systems",
-      "Defense & Aerospace Infrastructure",
-    ],
-    products: [
-      {
-        name: "EnerSys DataSafe HX Series",
-        description:
-          "The premier VRLA battery for vital UPS systems, featuring superior high-rate discharge performance and durability.",
-        image: batteryImage,
-        capacity: "Capacity: 12V 200W/Cell – 800W/Cell",
-        specs: [
-          { label: "Technology", value: "VRLA AGM" },
-          { label: "Case", value: "Flame retardant UL94 V-0" },
         ],
       },
     ],
@@ -595,6 +484,191 @@ export const brands: Brand[] = [
         specs: [
           { label: "Measurement", value: "Impedance, Voltage, Temperature" },
           { label: "Connectivity", value: "MODBUS, SNMP, Ethernet" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "amaron-quanta",
+    name: "Amaron Quanta",
+    shortName: "Amaron",
+    category: "Industrial Batteries",
+    tagline: "The Benchmark for Industrial VRLA UPS Batteries in India",
+    description:
+      "Manufactured by Amara Raja Batteries with advanced technology from Johnson Controls, Amaron Quanta is India's leading standby VRLA battery for enterprise UPS systems.",
+    partnershipTitle: "Electrosys & Amaron Quanta Partnership",
+    partnershipBody:
+      "Electrosys supplies factory-fresh Amaron Quanta 12V VRLA battery banks with complete impedance testing, custom battery racks, and pan-India replacement programs.",
+    partnershipPoints: [
+      "Patented heavy-duty Radgrid alloy technology for superior corrosion resistance",
+      "Specialized Instacharge paste formulation for rapid recovery from deep discharge",
+      "Explosion-resistant self-resealing safety valve design",
+      "Proven performance in high-ambient temperature Indian operating conditions",
+    ],
+    solutions: [
+      "Enterprise UPS Backup Banks",
+      "Data Centers & IT Hubs",
+      "Banking & ATM Infrastructure",
+      "Emergency Lighting & Power",
+    ],
+    products: [
+      {
+        name: "Amaron Quanta 12V Industrial VRLA Series",
+        description:
+          "High-rate, long-life sealed maintenance-free lead acid battery engineered with Radgrid technology for uninterrupted UPS runtime.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 7Ah – 200Ah",
+        specs: [
+          { label: "Technology", value: "Radgrid AGM VRLA" },
+          { label: "Design Life", value: "High Float Life" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "exide-battery",
+    name: "Exide Powersafe",
+    shortName: "Exide",
+    category: "Industrial Batteries",
+    tagline: "India's Trusted Pioneer in Sealed Maintenance-Free Power Storage",
+    description:
+      "Exide Powersafe NXT is India's premier sealed maintenance-free lead-acid battery range, engineered for demanding deep-cyclic and standby float applications in mission-critical facilities.",
+    partnershipTitle: "Electrosys & Exide Partnership",
+    partnershipBody:
+      "We deliver turnkey Exide Powersafe NXT battery installations, routine impedance audits, interlink torque audits, and eco-certified battery recycling.",
+    partnershipPoints: [
+      "Deep discharge recovery capability with robust thick-plate lead alloy",
+      "Sealed maintenance-free AGM technology with zero electrolyte top-up",
+      "Flame retardant PP-CP container options complying with UL standards",
+      "Nationwide manufacturing and warranty support backbones",
+    ],
+    solutions: [
+      "Continuous UPS Standby",
+      "Process Automation Plants",
+      "Hospitals & Healthcare Equipment",
+      "Telecommunication Networks",
+    ],
+    products: [
+      {
+        name: "Exide Powersafe NXT Plus Series",
+        description:
+          "Sealed maintenance-free VRLA battery featuring deep discharge capability and enhanced reliability for corporate and industrial power systems.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 26Ah – 200Ah",
+        specs: [
+          { label: "Technology", value: "AGM VRLA Deep Cycle" },
+          { label: "Container", value: "Flame Retardant Option" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "rocket-battery",
+    name: "Rocket Battery",
+    shortName: "Rocket",
+    category: "Industrial Batteries",
+    tagline: "High-Rate Discharge Sealed VRLA Batteries for UPS Applications",
+    description:
+      "Manufactured by Sebang Global Battery, Rocket batteries are globally recognized for top-tier reliability, high-density plate construction, and durable standby service in critical environments.",
+    partnershipTitle: "Electrosys & Rocket Battery Partnership",
+    partnershipBody:
+      "Electrosys provisions authentic Rocket ES and ESC series VRLA batteries with factory warranty, string balancing, and preventive maintenance across India.",
+    partnershipPoints: [
+      "Optimized high-rate discharge performance for short-duration UPS runtimes",
+      "Gas recombination efficiency exceeding 99%",
+      "Heavy-duty lead-calcium-tin grids for minimal self-discharge",
+      "Multi-positional operation with leak-proof construction",
+    ],
+    solutions: [
+      "Data Center UPS Systems",
+      "High-Density Server Rooms",
+      "Security & Surveillance Systems",
+      "Railway Signaling",
+    ],
+    products: [
+      {
+        name: "Rocket ES / ESC High-Rate VRLA Series",
+        description:
+          "Premier valve regulated lead acid battery designed for high energy discharge density and extended service life in critical UPS racks.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 18Ah – 200Ah",
+        specs: [
+          { label: "Technology", value: "High-Rate VRLA AGM" },
+          { label: "Self Discharge", value: "<3% per month" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "panasonic-battery",
+    name: "Panasonic",
+    shortName: "Panasonic",
+    category: "Industrial Batteries",
+    tagline: "Precision Japanese Engineering in Valve-Regulated Lead-Acid",
+    description:
+      "Panasonic Industrial VRLA batteries are celebrated worldwide for exceptional build quality, long standby life, and dependable discharge characteristics under critical load conditions.",
+    partnershipTitle: "Electrosys & Panasonic Partnership",
+    partnershipBody:
+      "We provide genuine Panasonic LC series VRLA battery strings for mission-critical medical systems, aerospace, precision test labs, and emergency power systems.",
+    partnershipPoints: [
+      "Exceptional charge acceptance and high energy density",
+      "Synthetic fiber separators with high acid retention",
+      "UL94-HB and UL94 V-0 flame-retardant case options",
+      "Extremely low self-discharge rate (<3% per month)",
+    ],
+    solutions: [
+      "Critical Medical Equipment",
+      "Precision Laboratory Instrumentation",
+      "High-Reliability UPS Systems",
+      "Emergency Power Systems",
+    ],
+    products: [
+      {
+        name: "Panasonic LC-P Series Industrial VRLA",
+        description:
+          "Japanese engineered long-life standby battery with flame retardant resin casing, specifically built for maximum UPS reliability.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 24Ah – 200Ah",
+        specs: [
+          { label: "Technology", value: "Flame Retardant VRLA" },
+          { label: "Origin", value: "Panasonic Quality Standard" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "hbl-battery",
+    name: "HBL Power Systems",
+    shortName: "HBL",
+    category: "Industrial Batteries",
+    tagline: "Engineered Battery Solutions for Defense, Telecom & Industrial UPS",
+    description:
+      "HBL Power Systems is a premier Indian manufacturer of specialized industrial batteries, including high-integrity VRLA, Tubular Gel, and Nickel-Cadmium systems for extreme environments.",
+    partnershipTitle: "Electrosys & HBL Partnership",
+    partnershipBody:
+      "Electrosys engineers and integrates HBL VRLA and specialized battery systems for power utilities, railway traction, substations, and enterprise UPS facilities.",
+    partnershipPoints: [
+      "Heavy-duty industrial grid alloys engineered for demanding tropical climates",
+      "High thermal stability and resistance to thermal runaway",
+      "Compliant with rigorous RDSO, IEEE, and IEC performance standards",
+      "Proven longevity in continuous utility and industrial applications",
+    ],
+    solutions: [
+      "Power Substations & Utilities",
+      "Industrial UPS & Switchgear",
+      "Railway Traction & Signaling",
+      "Telecom Exchanges",
+    ],
+    products: [
+      {
+        name: "HBL Triumph HP Series VRLA",
+        description:
+          "Heavy-duty valve regulated lead acid battery offering superior high-rate discharge efficiency and rugged durability in challenging grid conditions.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 28Ah – 200Ah",
+        specs: [
+          { label: "Technology", value: "Heavy Duty High-Rate AGM" },
+          { label: "Compliance", value: "RDSO / IEEE Compliant" },
         ],
       },
     ],

@@ -8,19 +8,22 @@ export const site = {
   description:
     "Electrosys provides engineered UPS systems, battery solutions, installation, and lifecycle maintenance across India with 30+ years of proven resilience.",
 
-  phone: "+91 00000 00000",
-  whatsappNumber: "910000000000",
+  phone: "+91 79778 61434",
+  whatsappNumber: "919769696021",
+  whatsappDisplay: "+91 97696 96021",
   email: "sales@electrosys.in",
   address: {
-    line1: "Industrial Area",
-    line2: "Commercial Hub",
-    city: "Mumbai / Pan-India",
-    postcode: "",
+    line1: "Jai Industrial Estate, Plot No. TS-6",
+    line2: "Near State Bank of India, MIDC, Dombivli East",
+    city: "Dombivli, Maharashtra",
+    postcode: "421203",
     country: "India",
   },
   hours: "Monday – Saturday, 09:00 – 18:00",
 
-  mapEmbedUrl: "https://www.google.com/maps?q=Mumbai&output=embed",
+  mapEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.4878!2d73.1088139!3d19.2126915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be79597b224f599%3A0xd0586cdeb53847eb!2sJai%20Industrial%20Estate!5e0!3m2!1sen!2sin!4v1710000000000",
+  mapDirectUrl: "https://maps.app.goo.gl/kbjaQdRJDoqUbCfo8",
   formEndpoint: "",
 
   social: {

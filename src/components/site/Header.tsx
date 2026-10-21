@@ -61,8 +61,8 @@ export function Header() {
         scrolled ? "shadow-soft border-b border-border" : "border-b border-transparent",
       )}
     >
-      <div className="container-x flex h-20 items-center justify-between gap-6">
-        <Link to="/" aria-label="Electrosys home" className="shrink-0">
+      <div className="container-x flex h-20 sm:h-24 md:h-[106px] items-center justify-between gap-6">
+        <Link to="/" aria-label="Electrosys home" className="shrink-0 py-1">
           <Logo />
         </Link>
 

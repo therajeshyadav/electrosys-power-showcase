@@ -20,12 +20,21 @@ export function BrandLogo({
   if (key.includes("vertiv")) {
     return (
       <div
-        className={cn("flex items-center gap-2.5 font-bold tracking-wider text-black", className)}
+        className={cn("flex items-center gap-2.5 font-bold tracking-wider text-slate-900", className)}
       >
-        <svg viewBox="0 0 100 100" className="h-8 w-8 shrink-0" fill="currentColor">
-          <path d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z M50 28 L30 42 L38 52 L50 44 L62 52 L70 42 Z M50 62 L35 72 L65 72 Z" />
+        <svg
+          viewBox="0 0 512 512"
+          className="h-8 w-8 shrink-0"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path d="M512 269.4c0 99.6-57.4 185.8-141.1 227.7L256.1 382.8l228.6-227.6H355.5l-99.4 99-.1-.1-99.4-99H27.3c42-83.3 128.8-140.4 228.8-140.4s186.6 57.2 228.6 140.5l.1-.1c18 35.5 27.2 74.7 27.2 114.3m-512 .3c0 99.5 57.4 185.7 141.1 227.6L256 383 27.3 155.2C9.3 190.7 0 229.9 0 269.7" />
         </svg>
-        <span className="text-xl font-extrabold tracking-[0.18em]">VERTIV</span>
+        <div className="flex items-baseline">
+          <span className="font-sans text-xl font-black tracking-[0.12em]">VERTIV</span>
+          <span className="ml-0.5 text-[0.6rem] font-bold tracking-normal opacity-75">TM</span>
+        </div>
       </div>
     );
   }
@@ -183,6 +192,93 @@ export function BrandLogo({
           <span className="text-lg font-black text-[#E35205]">1</span>
           <span className="text-[0.55rem] font-bold text-black">LTI</span>
         </div>
+      </div>
+    );
+  }
+
+  if (key.includes("delta")) {
+    return (
+      <div className={cn("flex items-center gap-2", className)}>
+        <svg viewBox="0 0 100 100" className="h-7 w-7 text-[#0066B3] shrink-0" fill="currentColor">
+          <path d="M50 15 L85 85 L15 85 Z M50 42 L32 75 L68 75 Z" />
+        </svg>
+        <div className="flex flex-col leading-none">
+          <span className="text-xl font-black tracking-wider text-[#0066B3]">DELTA</span>
+          <span className="text-[0.52rem] font-bold text-muted-foreground tracking-widest uppercase">
+            Power Solutions
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  if (key.includes("hitachi")) {
+    return (
+      <div className={cn("flex flex-col items-center leading-none", className)}>
+        <span className="text-2xl font-black tracking-wider text-[#E60012]">HITACHI</span>
+        <span className="mt-1 text-[0.52rem] font-bold tracking-wider text-[#1C1C1C]">
+          Inspire the Next
+        </span>
+      </div>
+    );
+  }
+
+  if (key.includes("amaron") || key.includes("quanta")) {
+    return (
+      <div className={cn("flex flex-col items-center leading-none", className)}>
+        <span className="text-2xl font-black italic tracking-wider text-[#00853F]">AMARON</span>
+        <span className="mt-0.5 text-[0.62rem] font-extrabold tracking-[0.25em] text-[#1C1C1C] uppercase">
+          QUANTA
+        </span>
+      </div>
+    );
+  }
+
+  if (key.includes("exide")) {
+    return (
+      <div className={cn("flex flex-col items-center leading-none", className)}>
+        <span className="text-2xl font-black tracking-tight text-[#ED1C24]">EXIDE</span>
+        <span className="mt-0.5 text-[0.55rem] font-black tracking-[0.2em] text-[#003B70] uppercase">
+          POWERSAFE
+        </span>
+      </div>
+    );
+  }
+
+  if (key.includes("rocket")) {
+    return (
+      <div className={cn("flex items-center gap-1.5", className)}>
+        <div className="flex h-7 w-7 items-center justify-center rounded-sm bg-[#E30613] text-white font-black text-xs">
+          🚀
+        </div>
+        <div className="flex flex-col leading-none">
+          <span className="text-xl font-black tracking-wider text-[#E30613]">ROCKET</span>
+          <span className="text-[0.5rem] font-bold text-muted-foreground uppercase">
+            VRLA Industrial
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  if (key.includes("panasonic")) {
+    return (
+      <div className={cn("flex flex-col items-center leading-none", className)}>
+        <span className="text-xl font-black tracking-[0.14em] text-[#00438B]">Panasonic</span>
+        <span className="mt-1 text-[0.52rem] font-semibold text-muted-foreground tracking-widest uppercase">
+          Industrial Batteries
+        </span>
+      </div>
+    );
+  }
+
+  if (key.includes("hbl")) {
+    return (
+      <div className={cn("flex flex-col items-center leading-none", className)}>
+        <span className="text-2xl font-black tracking-tight text-[#003366]">HBL</span>
+        <span className="mt-0.5 text-[0.52rem] font-bold tracking-wider text-[#D32F2F] uppercase">
+          Power Systems
+        </span>
       </div>
     );
   }

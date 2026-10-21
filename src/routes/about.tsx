@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
+import { BrandLogo } from "@/components/site/BrandLogo";
 import { Reveal, RevealImage, Stagger, staggerChild } from "@/components/site/Reveal";
 import { ContactCta, PageHero, SectionHeading } from "@/components/site/Sections";
 import { UpsFaqSection } from "@/components/site/UpsFaqSection";
@@ -250,12 +251,18 @@ function About() {
           />
           <Stagger className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-5">
             {brands.map((b) => (
-              <motion.div
-                key={b.slug}
-                variants={staggerChild}
-                className="flex items-center justify-center bg-background px-6 py-8 font-display text-base font-extrabold tracking-[0.14em] text-muted-foreground transition-colors duration-300 hover:text-primary-deep"
-              >
-                {b.wordmark}
+              <motion.div key={b.slug} variants={staggerChild} className="bg-background">
+                <Link
+                  to="/products/$brand"
+                  params={{ brand: b.slug }}
+                  className="group flex h-full min-h-[100px] items-center justify-center p-6 transition-all duration-200 hover:bg-surface"
+                >
+                  <BrandLogo
+                    slug={b.slug}
+                    name={b.shortName}
+                    className="transition-transform duration-300 group-hover:scale-105"
+                  />
+                </Link>
               </motion.div>
             ))}
           </Stagger>

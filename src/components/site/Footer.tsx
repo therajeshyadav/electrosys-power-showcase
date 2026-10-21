@@ -76,7 +76,7 @@ export function Footer() {
                 rel="noreferrer"
                 className="transition-colors hover:text-primary"
               >
-                WhatsApp enquiry
+                WhatsApp: {site.whatsappDisplay}
               </a>
             </li>
             <li>

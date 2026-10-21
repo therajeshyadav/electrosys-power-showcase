@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, MessageCircle, ExternalLink } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { PageHero, SectionHeading } from "@/components/site/Sections";
 import { ContactForm } from "@/components/site/ContactForm";
@@ -35,7 +35,7 @@ function Contact() {
     {
       icon: MessageCircle,
       label: "WhatsApp",
-      value: "Message our team",
+      value: site.whatsappDisplay,
       href: whatsappHref(),
       external: true,
     },
@@ -115,11 +115,27 @@ function Contact() {
       {/* Location Map */}
       <section className="bg-surface py-24 sm:py-28">
         <div className="container-x">
-          <SectionHeading
-            eyebrow="Location"
-            title="Find us."
-            intro="Visit our facility or get in touch for site visits and engineering surveys."
-          />
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading
+              eyebrow="Location"
+              title="Find us."
+              intro="Visit our facility or get in touch for site visits and engineering surveys."
+            />
+            {site.mapDirectUrl && (
+              <Reveal delay={0.15}>
+                <a
+                  href={site.mapDirectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-card px-5 py-2.5 text-xs font-bold tracking-wider uppercase text-primary-deep shadow-xs transition-all hover:bg-primary hover:text-white"
+                >
+                  <MapPin className="h-4 w-4" />
+                  <span>Open in Google Maps</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              </Reveal>
+            )}
+          </div>
           <Reveal
             delay={0.1}
             className="mt-10 overflow-hidden rounded-3xl border border-border shadow-sm"

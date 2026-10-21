@@ -11,6 +11,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Reveal, Stagger, staggerChild } from "@/components/site/Reveal";
 import { BrandLogo } from "@/components/site/BrandLogo";
+import { AnimatedMetricBar } from "@/components/site/AnimatedMetricBar";
 import { getBrand, relatedBrands, brands } from "@/data/brands";
 import { productWhatsAppHref, site, telHref } from "@/lib/site";
 
@@ -281,54 +282,22 @@ function BrandPage() {
               </div>
 
               {/* Progress Bars */}
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-800">
-                    <span>Client Satisfaction</span>
-                    <span>100%</span>
-                  </div>
-                  <div className="mt-2 h-4 w-full overflow-hidden rounded-full bg-slate-200">
-                    <motion.div
-                      className="h-full rounded-full bg-[#00A3E0]"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-800">
-                    <span>Product Knowledge</span>
-                    <span>100%</span>
-                  </div>
-                  <div className="mt-2 h-4 w-full overflow-hidden rounded-full bg-slate-200">
-                    <motion.div
-                      className="h-full rounded-full bg-[#00A3E0]"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-800">
-                    <span>Expert Support</span>
-                    <span>100%</span>
-                  </div>
-                  <div className="mt-2 h-4 w-full overflow-hidden rounded-full bg-slate-200">
-                    <motion.div
-                      className="h-full rounded-full bg-[#00A3E0]"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                    />
-                  </div>
-                </div>
+              <div className="space-y-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+                <AnimatedMetricBar
+                  label="Client Satisfaction"
+                  value={100}
+                  delay={0}
+                />
+                <AnimatedMetricBar
+                  label="Product Knowledge"
+                  value={100}
+                  delay={0.18}
+                />
+                <AnimatedMetricBar
+                  label="Expert Support"
+                  value={100}
+                  delay={0.36}
+                />
               </div>
             </div>
           </div>

@@ -357,7 +357,7 @@ export const services: Service[] = [
       "Proactive battery replacement eliminates surprise catastrophic drops during power outages. By planning string changeovers based on measured impedance data rather than guessing, you optimize capital expenditure and maintain guaranteed backup runtime for emergency generators and server rooms.",
     col2Title: "The Full Solution.",
     col2Body:
-      "Electrosys supplies authentic battery blocks directly from premier manufacturers including Yuasa, Exide, FIAMM, Rocket, Amarón, and CSB. We provide end-to-end logistics, rack assembly, cable fabrication, commissioning, and certified lead-acid recycling in full compliance with environmental guidelines.",
+      "Electrosys supplies authentic battery blocks directly from premier manufacturers including FIAMM, CSB, Exide, Rocket, Amarón, and Narada. We provide end-to-end logistics, rack assembly, cable fabrication, commissioning, and certified lead-acid recycling in full compliance with environmental guidelines.",
     actionTitle: "Don't Wait for Battery Swelling to Take Action.",
     actionIntro:
       "Industrial VRLA batteries typically reach end-of-life between 3 to 5 years. Waiting until cells vent or swell creates severe fire risks and immediate downtime.",
@@ -375,7 +375,7 @@ export const services: Service[] = [
     overview:
       "When industrial battery strings reach their recommended service lifespan (typically 3–5 years for standard VRLA and 7–10 years for long-life series), our certified engineers manage complete replacement without interrupting your critical ongoing loads.",
     points: [
-      "OEM supply from partner manufacturers (Yuasa, FIAMM, CSB, EnerSys)",
+      "OEM supply from partner manufacturers (FIAMM, CSB, Narada, and trusted brands)",
       "Planned out-of-hours & zero-downtime hot-swap changeover",
       "Post-replacement string balancing & charge verification",
       "Govt-approved eco-friendly recycling & disposal documentation",

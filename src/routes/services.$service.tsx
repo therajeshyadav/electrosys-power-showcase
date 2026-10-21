@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ChevronLeft, ChevronRight, MessageSquare, PhoneCall } from "lucide-react";
 import { useState } from "react";
 import { BrandLogo } from "@/components/site/BrandLogo";
+import { AnimatedMetricBar } from "@/components/site/AnimatedMetricBar";
 import { ContactCta } from "@/components/site/Sections";
 import { UpsFaqSection } from "@/components/site/UpsFaqSection";
 import { brands } from "@/data/brands";
@@ -242,21 +243,13 @@ function ServiceDetailPage() {
 
               {/* Progress Confidence Bars */}
               <div className="space-y-6 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
-                {service.metrics.map((metric) => (
-                  <div key={metric.label}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-bold text-slate-800">{metric.label}</span>
-                      <span className="text-xs font-extrabold text-[#00A3E0]">
-                        {metric.percent}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-slate-200 rounded-full h-4 overflow-hidden">
-                      <div
-                        className="bg-[#00A3E0] h-4 rounded-full transition-all duration-1000"
-                        style={{ width: `${metric.percent}%` }}
-                      />
-                    </div>
-                  </div>
+                {service.metrics.map((metric, idx) => (
+                  <AnimatedMetricBar
+                    key={metric.label}
+                    label={metric.label}
+                    value={metric.percent}
+                    delay={idx * 0.15}
+                  />
                 ))}
               </div>
             </div>
