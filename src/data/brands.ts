@@ -5,69 +5,74 @@ export type BrandProduct = {
   name: string;
   description: string;
   image: string;
+  capacity?: string;
   specs: { label: string; value: string }[];
 };
 
 export type Brand = {
   slug: string;
   name: string;
-  wordmark: string;
-  category: string;
+  shortName: string;
+  category: "UPS Systems" | "Industrial Batteries";
   tagline: string;
   description: string;
-  partnership: string;
-  solutions: { title: string; body: string }[];
+  partnershipTitle: string;
+  partnershipBody: string;
+  partnershipPoints: string[];
+  solutions: string[];
   products: BrandProduct[];
 };
 
 export const brands: Brand[] = [
+  // --- UPS SYSTEMS (8 Brands) ---
   {
     slug: "vertiv-ups",
     name: "Vertiv UPS",
-    wordmark: "VERTIV",
+    shortName: "Vertiv",
     category: "UPS Systems",
-    tagline: "Critical power protection for data and industrial environments.",
+    tagline: "Reliable Backup Power for Critical IT Systems",
     description:
-      "Vertiv UPS systems cover single-phase rack installations through to large three-phase configurations for critical facilities. Placeholder description pending confirmed brand copy.",
-    partnership:
-      "Electrosys supplies, installs and supports Vertiv UPS systems as part of our power protection portfolio. Partnership details to be confirmed with the client.",
+      "Vertiv offers advanced UPS technologies designed to ensure continuous power and optimal performance for vital IT infrastructure, from small network closets to large-scale data centres. Their comprehensive solutions help enhance system uptime and provide robust protection for servers, storage, and networking equipment. Vertiv's UPS products are engineered for reliability, efficiency, and easy integration across diverse IT environments.",
+    partnershipTitle: "Electrosys & Vertiv Partnership",
+    partnershipBody:
+      "At Electrosys, we supply, install, and support Vertiv's complete range of UPS systems. With in-depth technical knowledge and hands-on experience, our team is well-equipped to recommend tailored solutions that meet specific client requirements. Vertiv is recognised for its excellence in the following areas:",
+    partnershipPoints: [
+      "High-performance power systems for mission-critical applications",
+      "Intelligent thermal management solutions",
+      "Customisable IT racks and enclosures",
+      "Advanced monitoring and control platforms",
+    ],
     solutions: [
-      {
-        title: "Data & IT rooms",
-        body: "Rack and tower systems for server rooms and comms cabinets.",
-      },
-      {
-        title: "Industrial process",
-        body: "Three-phase protection for continuous production environments.",
-      },
-      {
-        title: "Scalable capacity",
-        body: "Modular configurations that grow with the connected load.",
-      },
+      "Critical Power",
+      "Thermal Management",
+      "Racks & Enclosures",
+      "Monitoring & Management",
     ],
     products: [
       {
-        name: "Vertiv Rack-Mount UPS",
+        name: "Liebert® GXT5",
         description:
-          "Online double-conversion rack UPS for server rooms and network cabinets. Placeholder product copy.",
+          "The Liebert® GXT5 from Vertiv is a high-efficiency, online double-conversion UPS designed to safeguard sensitive electronics from power disturbances. This versatile system is ideal for both edge and core network applications, offering flexible deployment in rack or tower configurations. With the ability to extend battery life through optional external battery cabinets and enhanced remote monitoring capabilities, the GXT5 is a dependable solution for ensuring continuous power in mission-critical environments.",
         image: upsImage,
+        capacity: "Capacity range: 750 VA – 20 kVA",
         specs: [
           { label: "Topology", value: "Online double conversion" },
-          { label: "Form factor", value: "Rack-mount" },
-          { label: "Phase", value: "Single phase" },
-          { label: "Application", value: "IT & comms" },
+          { label: "Form factor", value: "Rack / Tower convertible" },
+          { label: "Phase", value: "Single phase / Three phase input" },
+          { label: "Power Factor", value: "Unity (1.0 PF)" },
         ],
       },
       {
-        name: "Vertiv Three-Phase UPS",
+        name: "Liebert® EXS 3-Phase UPS",
         description:
-          "Floor-standing three-phase UPS for larger critical loads and industrial installations. Placeholder product copy.",
+          "Integrated high-density three-phase power protection with internal batteries and compact footprint, providing unmatched reliability for medical and industrial processing.",
         image: upsImage,
+        capacity: "Capacity range: 10 kVA – 80 kVA",
         specs: [
-          { label: "Topology", value: "Online double conversion" },
-          { label: "Form factor", value: "Floor standing" },
-          { label: "Phase", value: "Three phase" },
-          { label: "Application", value: "Facility level" },
+          { label: "Topology", value: "Transformer-free Online" },
+          { label: "Efficiency", value: "Up to 96.2% in double conversion" },
+          { label: "Phase", value: "3 Phase In / 3 Phase Out" },
+          { label: "Application", value: "Facility & Data Centre" },
         ],
       },
     ],
@@ -75,32 +80,299 @@ export const brands: Brand[] = [
   {
     slug: "riello-ups",
     name: "Riello UPS",
-    wordmark: "RIELLO",
+    shortName: "Riello",
     category: "UPS Systems",
-    tagline: "Efficient uninterruptible power for business continuity.",
+    tagline: "Efficient Uninterruptible Power for Continuous Business Resilience",
     description:
-      "Riello UPS offers a broad range of uninterruptible power supplies for commercial and industrial applications. Placeholder description pending confirmed brand copy.",
-    partnership:
-      "Electrosys works with Riello UPS products across supply, installation and ongoing maintenance. Partnership details to be confirmed with the client.",
+      "Riello UPS provides state-of-the-art power protection designed for energy efficiency, smart grid resilience, and versatile commercial application.",
+    partnershipTitle: "Electrosys & Riello UPS Partnership",
+    partnershipBody:
+      "Electrosys supplies, integrates, and maintains the full suite of Riello UPS installations across India, delivering custom backup runtimes and responsive service support.",
+    partnershipPoints: [
+      "Smart active eco-operating modes",
+      "High power density with modular scalability",
+      "Advanced battery care and temperature compensation",
+      "Comprehensive warranty and factory-backed support",
+    ],
     solutions: [
-      {
-        title: "Commercial buildings",
-        body: "Protection for office IT, security and building systems.",
-      },
-      { title: "High efficiency", body: "Operating modes designed to reduce running losses." },
-      { title: "Service ready", body: "Configurations that support planned maintenance access." },
+      "Data Centres & Server Rooms",
+      "Commercial Offices & Building Management",
+      "Industrial & Manufacturing Continuity",
+      "Emergency Power & Lighting",
     ],
     products: [
       {
-        name: "Riello Online UPS",
+        name: "Riello Sentinel Dual (SDU)",
         description:
-          "Online UPS designed for continuous protection of sensitive equipment. Placeholder product copy.",
+          "High power density online double-conversion UPS for critical network servers, telecom hardware, and medical facilities.",
         image: upsImage,
+        capacity: "Capacity range: 4 kVA – 10 kVA",
         specs: [
           { label: "Topology", value: "Online double conversion" },
-          { label: "Form factor", value: "Tower / rack convertible" },
-          { label: "Phase", value: "Single phase" },
-          { label: "Application", value: "Commercial IT" },
+          { label: "Form Factor", value: "Rack / Tower convertible" },
+          { label: "Output PF", value: "1.0 Power Factor" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "apc-ups",
+    name: "APC by Schneider Electric",
+    shortName: "APC",
+    category: "UPS Systems",
+    tagline: "Industry-Standard Power Protection & Edge Computing Infrastructure",
+    description:
+      "APC by Schneider Electric is a global standard for IT room, edge computing, and data infrastructure power protection and smart remote management.",
+    partnershipTitle: "Electrosys & APC Partnership",
+    partnershipBody:
+      "We engineer APC Smart-UPS and Symmetra architectures with precision sizing, battery modules, and EcoStruxure remote monitoring.",
+    partnershipPoints: [
+      "Smart-UPS on-line double conversion",
+      "EcoStruxure cloud-connected fleet management",
+      "Hot-swappable user-replaceable battery cartridges",
+      "Pre-tested power distribution units and rack integration",
+    ],
+    solutions: [
+      "Edge Computing & Micro Data Centres",
+      "Enterprise Server Rooms",
+      "Network Distribution Closets",
+      "Industrial Control Rooms",
+    ],
+    products: [
+      {
+        name: "APC Smart-UPS On-Line SRT",
+        description:
+          "High density, true double-conversion on-line power protection for servers, voice/data networks, and medical labs.",
+        image: upsImage,
+        capacity: "Capacity range: 1 kVA – 20 kVA",
+        specs: [
+          { label: "Topology", value: "Double Conversion On-Line" },
+          { label: "Management", value: "Embedded Network Management Card" },
+          { label: "Battery", value: "Scalable runtime with external packs" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ablerex-ups",
+    name: "Ablerex",
+    shortName: "Ablerex",
+    category: "UPS Systems",
+    tagline: "Innovative Power Quality & High-Efficiency UPS Solutions",
+    description:
+      "Ablerex specializes in advanced power conversion technologies, active power filters, and ultra-reliable UPS topologies for critical infrastructure.",
+    partnershipTitle: "Electrosys & Ablerex Partnership",
+    partnershipBody:
+      "Electrosys pairs Ablerex power quality technology with customized engineering for challenging electrical environments.",
+    partnershipPoints: [
+      "Active Power Filtering & Harmonic Mitigation",
+      "High-efficiency transformerless architectures",
+      "Robust electrical safety standards",
+      "Modular three-phase expansion options",
+    ],
+    solutions: [
+      "Power Quality & Harmonic Control",
+      "Telecom & Networking Systems",
+      "Precision Laboratory Instruments",
+      "Commercial IT Infrastructure",
+    ],
+    products: [
+      {
+        name: "Ablerex Taurus Series 3-Phase",
+        description:
+          "Online double conversion three-phase UPS providing clean, continuous power for mid to large commercial sites.",
+        image: upsImage,
+        capacity: "Capacity range: 10 kVA – 120 kVA",
+        specs: [
+          { label: "Topology", value: "Online Double Conversion" },
+          { label: "Parallel Capability", value: "Up to 4 units" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "eaton-ups",
+    name: "Eaton",
+    shortName: "Eaton",
+    category: "UPS Systems",
+    tagline: "Powering Business Worldwide with Intelligent Power Management",
+    description:
+      "Eaton delivers leading power management solutions that increase energy efficiency, enhance reliability, and protect against power disruptions.",
+    partnershipTitle: "Electrosys & Eaton Partnership",
+    partnershipBody:
+      "We design and deploy Eaton 93PM, 9395, and 9SX ranges with full integration, harmonic mitigation, and AMC servicing.",
+    partnershipPoints: [
+      "Energy Saver System (ESS) technology with 99% efficiency",
+      "HotSync patented load sharing without communication wiring",
+      "Advanced Battery Management (ABM) extending cell life by 50%",
+      "Cybersecurity-certified network cards",
+    ],
+    solutions: [
+      "Cloud & Colocation Data Centers",
+      "Industrial Automation & Robotics",
+      "Healthcare Power & Imaging",
+      "Financial Institutions",
+    ],
+    products: [
+      {
+        name: "Eaton 9SX / 9PX Double Conversion UPS",
+        description:
+          "High performance online double-conversion UPS with advanced LCD interface and Energy Star compliance.",
+        image: upsImage,
+        capacity: "Capacity range: 1 kVA – 22 kVA",
+        specs: [
+          { label: "Efficiency", value: "Up to 95% in online mode" },
+          { label: "Battery", value: "ABM technology" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "eltek-ups",
+    name: "Eltek",
+    shortName: "Eltek",
+    category: "UPS Systems",
+    tagline: "High-Efficiency Power Conversion for Telecom & Industrial Power",
+    description:
+      "Eltek, a Delta Group Company, is a global leader in high-efficiency DC power systems, modular inverters, and industrial rectifiers.",
+    partnershipTitle: "Electrosys & Eltek Partnership",
+    partnershipBody:
+      "Electrosys deploys Eltek modular power shelves and industrial inverters for rail, telecom, utility substations, and offshore sites.",
+    partnershipPoints: [
+      "Flatpack2 HE high efficiency modular rectifiers",
+      "Dual input AC/DC hybrid architectures",
+      "High reliability in harsh ambient conditions",
+      "Smart controller remote telemetry",
+    ],
+    solutions: [
+      "Telecom & Wireless Base Stations",
+      "Power Utilities & Substations",
+      "Railway Signaling & Infrastructure",
+      "Renewable Energy & Microgrids",
+    ],
+    products: [
+      {
+        name: "Eltek Flatpack2 Modular Power System",
+        description:
+          "Compact, modular rectifier and inverter system delivering unmatched electrical efficiency and flexibility.",
+        image: upsImage,
+        capacity: "Scalable modular capacity",
+        specs: [
+          { label: "Efficiency", value: "96.5% High Efficiency" },
+          { label: "Architecture", value: "Modular hot-pluggable" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "cet-power",
+    name: "CE+T Power",
+    shortName: "CE+T",
+    category: "UPS Systems",
+    tagline: "Modular Inverters & Multi-Directional Power Converters",
+    description:
+      "CE+T Power designs award-winning modular inverters and energy management solutions ensuring zero power interruption for critical operations.",
+    partnershipTitle: "Electrosys & CE+T Power Partnership",
+    partnershipBody:
+      "We provide CE+T modular inverter and bidirectional converter installations with full redundancy and battery bank integration.",
+    partnershipPoints: [
+      "True modular inverter architecture with N+1 redundancy",
+      "TSI (True Sine Wave Integrated) technology",
+      "Zero transfer time between AC and DC sources",
+      "Galvanic isolation and harsh site compatibility",
+    ],
+    solutions: [
+      "Telecom Central Offices",
+      "Industrial Automation & Process Power",
+      "Railway Power Distribution",
+      "Renewable & Energy Storage Integration",
+    ],
+    products: [
+      {
+        name: "CE+T Sierra Modular Power Converter",
+        description:
+          "Multi-directional power converter offering bidirectional power flow between AC and DC grids with battery backup.",
+        image: upsImage,
+        capacity: "Capacity range: 2.5 kW – 300 kW",
+        specs: [
+          { label: "Topology", value: "Bidirectional Multi-port" },
+          { label: "Isolation", value: "Galvanic Isolation" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "socomec-ups",
+    name: "Socomec",
+    shortName: "Socomec",
+    category: "UPS Systems",
+    tagline: "Innovative Power Solutions & High-Availability Switching",
+    description:
+      "Socomec is a European specialist in low voltage electrical networks, static transfer switches, and high-availability modular UPS systems.",
+    partnershipTitle: "Electrosys & Socomec Partnership",
+    partnershipBody:
+      "Electrosys integrates Socomec UPS systems, STS static switches, and energy measurement devices across enterprise facilities.",
+    partnershipPoints: [
+      "MODULYS modular 3-phase UPS with zero downtime upgrade",
+      "Statys high-speed static transfer switches",
+      "DIRIS smart power monitoring integration",
+      "Certified performance for critical healthcare & transport",
+    ],
+    solutions: [
+      "Hospitals & Healthcare Facilities",
+      "Data Centers & Cloud Infrastructure",
+      "Airport & Rail Transportation Hubs",
+      "Industrial & Pharmaceutical Clean Rooms",
+    ],
+    products: [
+      {
+        name: "Socomec MODULYS GP 3-Phase UPS",
+        description:
+          "Fully redundant, scalable modular online UPS designed for zero-risk maintenance and seamless power growth.",
+        image: upsImage,
+        capacity: "Capacity range: 25 kVA – 600 kVA",
+        specs: [
+          { label: "Architecture", value: "True Modular 3-Phase" },
+          { label: "Redundancy", value: "N+1 / N+X hot-swap" },
+        ],
+      },
+    ],
+  },
+
+  // --- INDUSTRIAL BATTERY BRANDS (7 Brands) ---
+  {
+    slug: "fiamm",
+    name: "FIAMM",
+    shortName: "FIAMM",
+    category: "Industrial Batteries",
+    tagline: "Your World, Our Energy — Industrial Battery Systems",
+    description:
+      "FIAMM Energy Technology is a global manufacturer of reserve power batteries, VRLA AGM, and Gel batteries engineered for standby reliability.",
+    partnershipTitle: "Electrosys & FIAMM Partnership",
+    partnershipBody:
+      "Electrosys supplies, tests, installs, and recycles authentic FIAMM industrial battery strings for UPS, telecom, and utility networks.",
+    partnershipPoints: [
+      "FLB and FGL high rate discharge series",
+      "Long design life with flame retardant casings",
+      "Deep discharge recovery capability",
+      "Full compliance with international battery standards",
+    ],
+    solutions: [
+      "UPS Standby Power Banks",
+      "Telecom Transmission Towers",
+      "Substation DC Systems",
+      "Emergency Lighting & Safety Systems",
+    ],
+    products: [
+      {
+        name: "FIAMM FLB High Rate VRLA Battery",
+        description:
+          "Valve-regulated lead-acid battery engineered specifically for high rate discharge UPS applications with compact footprint.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 26Ah – 200Ah",
+        specs: [
+          { label: "Technology", value: "AGM VRLA" },
+          { label: "Design Life", value: "10-12 Years Eurobat" },
         ],
       },
     ],
@@ -108,59 +380,184 @@ export const brands: Brand[] = [
   {
     slug: "yuasa",
     name: "Yuasa",
-    wordmark: "YUASA",
+    shortName: "Yuasa",
     category: "Industrial Batteries",
-    tagline: "Dependable stored energy for standby applications.",
+    tagline: "World-Class Standby VRLA Battery Performance",
     description:
-      "Yuasa manufactures sealed lead-acid batteries widely used in UPS, standby and industrial applications. Placeholder description pending confirmed brand copy.",
-    partnership:
-      "Electrosys supplies and replaces Yuasa batteries as part of our battery services. Partnership details to be confirmed with the client.",
+      "GS Yuasa is one of the world's largest and most trusted manufacturers of lead-acid batteries, providing gold-standard reliability for UPS systems.",
+    partnershipTitle: "Electrosys & Yuasa Partnership",
+    partnershipBody:
+      "We provide genuine Yuasa NP and EN series batteries with matched string impedance testing and preventive replacement programs.",
+    partnershipPoints: [
+      "Industry benchmark for valve-regulated lead acid cells",
+      "Superior float life and gas recombination efficiency",
+      "Flame retardant UL94:V0 case options",
+      "Proven track record in continuous mission-critical sites",
+    ],
     solutions: [
-      { title: "UPS standby", body: "Battery strings matched to UPS autonomy requirements." },
-      { title: "Life planning", body: "Replacement scheduling based on measured condition." },
-      { title: "Safe handling", body: "Compliant transport, installation and recycling." },
+      "Data Center UPS Battery Strings",
+      "Medical Equipment Standby",
+      "Fire Alarms & Security Systems",
+      "Industrial Instrumentation",
     ],
     products: [
       {
-        name: "Yuasa VRLA Battery",
+        name: "Yuasa NP / NPL Industrial VRLA",
         description:
-          "Valve-regulated lead-acid battery block for standby and UPS duty. Placeholder product copy.",
+          "Maintenance-free sealed lead-acid battery designed for long float standby life in UPS and emergency power.",
         image: batteryImage,
+        capacity: "Capacity: 12V 24Ah – 200Ah",
         specs: [
-          { label: "Chemistry", value: "VRLA / AGM" },
-          { label: "Duty", value: "Standby" },
-          { label: "Mounting", value: "Rack or cabinet" },
-          { label: "Application", value: "UPS battery strings" },
+          { label: "Technology", value: "VRLA AGM" },
+          { label: "Recombination", value: "Over 99% efficient" },
         ],
       },
     ],
   },
   {
-    slug: "fiamm",
-    name: "FIAMM",
-    wordmark: "FIAMM",
+    slug: "csb-battery",
+    name: "CSB Battery",
+    shortName: "CSB",
     category: "Industrial Batteries",
-    tagline: "Industrial battery technology for demanding installations.",
+    tagline: "Leading Manufacturer of High-Rate UPS Standby Batteries",
     description:
-      "FIAMM produces industrial batteries used in telecoms, UPS and energy storage applications. Placeholder description pending confirmed brand copy.",
-    partnership:
-      "Electrosys sources FIAMM batteries for replacement programmes and new installations. Partnership details to be confirmed with the client.",
+      "CSB Energy Technology is a world-renowned specialist in high-rate discharge VRLA batteries engineered specifically for modern UPS applications.",
+    partnershipTitle: "Electrosys & CSB Battery Partnership",
+    partnershipBody:
+      "Electrosys supplies authentic CSB HRL and UPS series batteries, providing rigorous impedance verification and lifecycle replacement.",
+    partnershipPoints: [
+      "Optimized for high-wattage power output in short duration discharge",
+      "High energy density reducing cabinet footprint",
+      "ISO 9001 and ISO 14001 certified production",
+      "Extended service life under controlled float conditions",
+    ],
     solutions: [
-      { title: "Telecom & UPS", body: "Battery blocks suited to long standby cycles." },
-      { title: "Condition testing", body: "Periodic testing to verify string health." },
-      { title: "Planned renewal", body: "Phased replacement to avoid unplanned downtime." },
+      "High-Density UPS Systems",
+      "Financial Data Centers",
+      "Medical Diagnostics & Imaging",
+      "Telecommunication Hubs",
     ],
     products: [
       {
-        name: "FIAMM Standby Battery",
+        name: "CSB HRL High Rate Long Life Series",
         description:
-          "Sealed industrial battery for standby power installations. Placeholder product copy.",
+          "Specially designed for high efficient discharge application with 20% higher energy density than standard batteries.",
         image: batteryImage,
+        capacity: "Capacity: 12V High Rate Watts/Cell",
         specs: [
-          { label: "Chemistry", value: "Lead-acid" },
-          { label: "Duty", value: "Standby / float" },
-          { label: "Mounting", value: "Rack or tier stand" },
-          { label: "Application", value: "UPS & telecom" },
+          { label: "Design Life", value: "10 Years Standby" },
+          { label: "Technology", value: "Absorbent Glass Mat (AGM)" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "enersys",
+    name: "EnerSys",
+    shortName: "EnerSys",
+    category: "Industrial Batteries",
+    tagline: "Global Leader in Stored Energy Solutions for Industrial Applications",
+    description:
+      "EnerSys manufactures industry-defining brands like DataSafe, PowerSafe, and Genesis, delivering premium stored energy solutions.",
+    partnershipTitle: "Electrosys & EnerSys Partnership",
+    partnershipBody:
+      "We engineer DataSafe HX and PowerSafe battery systems for large-scale enterprise UPS installations, utilities, and telecom backbones.",
+    partnershipPoints: [
+      "DataSafe HX top-terminal and front-terminal configurations",
+      "Pure lead Thin Plate (TPPL) technology options",
+      "High energy density with reduced space requirements",
+      "Exceptional float life and high-temperature tolerance",
+    ],
+    solutions: [
+      "Hyperscale & Colocation Data Centers",
+      "Power Generation & Substations",
+      "Industrial UPS Systems",
+      "Defense & Aerospace Infrastructure",
+    ],
+    products: [
+      {
+        name: "EnerSys DataSafe HX Series",
+        description:
+          "The premier VRLA battery for vital UPS systems, featuring superior high-rate discharge performance and durability.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 200W/Cell – 800W/Cell",
+        specs: [
+          { label: "Technology", value: "VRLA AGM" },
+          { label: "Case", value: "Flame retardant UL94 V-0" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "narada",
+    name: "MP Narada",
+    shortName: "Narada",
+    category: "Industrial Batteries",
+    tagline: "Advanced Lithium & Lead Carbon Energy Storage Solutions",
+    description:
+      "Narada is an international pioneer in stored energy solutions, specializing in high-performance VRLA, Lead Carbon, and Lithium-ion battery systems.",
+    partnershipTitle: "Electrosys & Narada Partnership",
+    partnershipBody:
+      "Electrosys supplies Narada high-rate VRLA and advanced Lithium-ion battery racks with integrated BMS telemetry for modern UPS systems.",
+    partnershipPoints: [
+      "Advanced Lead-Carbon and Lithium Iron Phosphate (LiFePO4) chemistries",
+      "High cycle life and rapid recharge capability",
+      "Front access terminals for streamlined maintenance",
+      "Wide operating temperature range tolerance",
+    ],
+    solutions: [
+      "Modern Edge & Core Data Centers",
+      "Telecom Towers & Micro-grid Sites",
+      "Renewable Energy & Battery Storage",
+      "Industrial Heavy Process Standby",
+    ],
+    products: [
+      {
+        name: "Narada High Rate UPS Series",
+        description:
+          "Advanced VRLA battery modules offering exceptional high-current discharge efficiency and compact spatial design.",
+        image: batteryImage,
+        capacity: "Capacity: 12V 50Ah – 200Ah",
+        specs: [
+          { label: "Terminal", value: "Front Access / Top Terminal" },
+          { label: "Technology", value: "VRLA Lead-Acid" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "rblti",
+    name: "RBLTI",
+    shortName: "RBLTI",
+    category: "Industrial Batteries",
+    tagline: "Industrial Battery & Stored Energy Solutions",
+    description:
+      "RBLTI provides specialized industrial battery cells and heavy-duty standby power solutions designed for rigorous operating demands.",
+    partnershipTitle: "Electrosys & RBLTI Partnership",
+    partnershipBody:
+      "We integrate RBLTI battery banks into commercial, industrial, and infrastructure power protection schemes with full lifecycle testing.",
+    partnershipPoints: [
+      "Engineered for deep resilience and cyclical endurance",
+      "Heavy-duty plate construction",
+      "Optimized for high-vibration and industrial ambient profiles",
+      "Comprehensive warranty support",
+    ],
+    solutions: [
+      "Industrial Plant Controls",
+      "Utility & Switchgear Standby",
+      "Emergency Power Systems",
+      "Commercial UPS Installations",
+    ],
+    products: [
+      {
+        name: "RBLTI Industrial Standby Battery",
+        description:
+          "Robust lead-acid and AGM battery blocks built for dependable standby power across commercial and industrial environments.",
+        image: batteryImage,
+        capacity: "Capacity tailored to site requirements",
+        specs: [
+          { label: "Duty", value: "Continuous Float Standby" },
+          { label: "Mounting", value: "Cabinet / Tier Stand" },
         ],
       },
     ],
@@ -168,29 +565,36 @@ export const brands: Brand[] = [
   {
     slug: "franklin-electric",
     name: "Franklin Electric",
-    wordmark: "FRANKLIN",
-    category: "Power Systems",
-    tagline: "Engineered systems for water and power applications.",
+    shortName: "Franklin Electric",
+    category: "Industrial Batteries",
+    tagline: "Grid Solutions & Battery Monitoring Intelligence",
     description:
-      "Franklin Electric manufactures motors, drives and control systems used across water and industrial applications. Placeholder description pending confirmed brand copy.",
-    partnership:
-      "Electrosys supplies Franklin Electric equipment alongside our power solution services. Partnership details to be confirmed with the client.",
+      "Franklin Electric Grid Solutions manufactures industry-leading battery monitoring, testing, and intelligence systems for critical power infrastructure.",
+    partnershipTitle: "Electrosys & Franklin Electric Partnership",
+    partnershipBody:
+      "Electrosys installs Franklin Electric cell management systems and handheld testers to ensure predictive battery health monitoring.",
+    partnershipPoints: [
+      "Cellwatch continuous battery monitoring systems",
+      "Handheld conductance testers and diagnostic meters",
+      "Early detection of failing individual cells",
+      "Automated alarm notifications and data logging",
+    ],
     solutions: [
-      { title: "Motors & drives", body: "Equipment selection matched to the duty profile." },
-      { title: "Control systems", body: "Protection and control for pumping installations." },
-      { title: "Support", body: "Assistance with commissioning and spares." },
+      "Continuous Battery Health Monitoring",
+      "Data Center Battery Room Compliance",
+      "Utility Substation DC Monitoring",
+      "Preventive Maintenance Telemetry",
     ],
     products: [
       {
-        name: "Franklin Electric Control System",
+        name: "Franklin Electric Battery Monitoring System",
         description:
-          "Control and protection equipment for motor and pumping applications. Placeholder product copy.",
-        image: upsImage,
+          "Automated on-line battery monitoring solution delivering real-time internal resistance, voltage, and temperature data per cell.",
+        image: batteryImage,
+        capacity: "Modular monitoring for 12V to 480V DC banks",
         specs: [
-          { label: "Type", value: "Control & protection" },
-          { label: "Mounting", value: "Panel" },
-          { label: "Application", value: "Water & industrial" },
-          { label: "Support", value: "Supply and commissioning" },
+          { label: "Measurement", value: "Impedance, Voltage, Temperature" },
+          { label: "Connectivity", value: "MODBUS, SNMP, Ethernet" },
         ],
       },
     ],
@@ -201,6 +605,6 @@ export function getBrand(slug: string) {
   return brands.find((b) => b.slug === slug);
 }
 
-export function relatedBrands(slug: string, count = 3) {
+export function relatedBrands(slug: string, count = 5) {
   return brands.filter((b) => b.slug !== slug).slice(0, count);
 }

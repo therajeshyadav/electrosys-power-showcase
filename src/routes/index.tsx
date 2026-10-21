@@ -1,13 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
 import { HomeHero } from "@/components/site/HomeHero";
 import { Preloader } from "@/components/site/Preloader";
 import { Reveal, RevealImage, Stagger, staggerChild } from "@/components/site/Reveal";
 import { ContactCta, SectionHeading } from "@/components/site/Sections";
 import { BrandCard } from "@/components/site/BrandCard";
+import { EngineeredPackagesSection } from "@/components/site/EngineeredPackagesSection";
+import { UpsFaqSection } from "@/components/site/UpsFaqSection";
 import { brands } from "@/data/brands";
 import { services } from "@/data/services";
+import { companyStats, whyTrustPoints } from "@/data/company";
 import { site } from "@/lib/site";
 import aboutImage from "@/assets/about-team.jpg";
 import hero1 from "@/assets/hero-1.jpg";
@@ -15,20 +18,20 @@ import hero1 from "@/assets/hero-1.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Electrosys — Reliable Power Solutions, UPS Systems & Batteries" },
+      { title: "Electrosys — 30 Years in Electrical Safety & Power Resilience" },
       {
         name: "description",
         content:
-          "Electrosys supplies, installs and maintains UPS systems, industrial batteries and power protection for business and industrial sites.",
+          "Electrosys provides 30+ years of engineered UPS systems, battery solutions, and pan-India lifecycle maintenance for mission-critical business environments.",
       },
       {
         property: "og:title",
-        content: "Electrosys — Reliable Power Solutions, UPS Systems & Batteries",
+        content: "Electrosys — 30 Years in Electrical Safety & Power Resilience",
       },
       {
         property: "og:description",
         content:
-          "UPS installation, maintenance, battery services and technical support from Electrosys.",
+          "Over 3,000 UPS systems installed across India with tailored power protection and active lifecycle support.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -38,38 +41,28 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const whyPoints = [
-  {
-    title: "Industry Experience",
-    body: "Engineering-led delivery across commercial and industrial power installations. Details to be confirmed with the client.",
-  },
-  {
-    title: "Quality Products",
-    body: "Equipment selected from established manufacturers rather than the cheapest available option.",
-  },
-  {
-    title: "Trusted Partnerships",
-    body: "Supplier relationships that give access to the right products and spares.",
-  },
-  {
-    title: "Reliable Support",
-    body: "Direct access to engineers who understand your installation and its history.",
-  },
-  {
-    title: "Professional Service",
-    body: "Planned work, clear reporting and a tidy site at handover.",
-  },
-  {
-    title: "Business Solutions",
-    body: "Systems sized around your load, autonomy and risk profile.",
-  },
-];
-
 function Home() {
   return (
     <>
       <Preloader />
       <HomeHero />
+
+      {/* Stats Counter Bar */}
+      <section className="border-b border-border bg-card py-10">
+        <div className="container-x">
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+            {companyStats.map((stat, i) => (
+              <div key={stat.label} className="border-l-2 border-primary/40 pl-5">
+                <span className="font-display text-3xl font-extrabold text-foreground sm:text-4xl">
+                  {stat.value}
+                </span>
+                <p className="mt-1 text-sm font-bold text-foreground">{stat.label}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{stat.sublabel}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Company introduction */}
       <section className="py-24 sm:py-32">
@@ -79,18 +72,27 @@ function Home() {
               eyebrow="Who We Are"
               title={
                 <>
-                  Power solutions built around
-                  <span className="text-primary-deep"> uptime</span>.
+                  30 Years of engineering
+                  <span className="text-primary-deep"> power resilience</span>.
                 </>
               }
               intro={site.description}
             />
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-                From specification through to long-term maintenance, Electrosys works with
-                businesses that cannot afford unplanned interruptions. Placeholder copy pending
-                final company information.
+                With over three decades of field expertise, Electrosys delivers complete power
+                resilience for healthcare, manufacturing, IT data rooms, and commercial
+                infrastructure. We design, install, and support systems that guarantee uninterrupted
+                continuity when utility power fails.
               </p>
+              <div className="mt-8 flex flex-wrap gap-4 text-xs font-semibold text-foreground">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-soft px-4 py-2 text-primary-deep">
+                  <CheckCircle2 className="h-4 w-4" /> 3,000+ Active Installations
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-soft px-4 py-2 text-primary-deep">
+                  <CheckCircle2 className="h-4 w-4" /> Pan-India Engineering Network
+                </span>
+              </div>
               <Link
                 to="/about"
                 className="group mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[0.75rem] font-bold tracking-[0.14em] uppercase text-background transition-transform duration-200 hover:-translate-y-0.5"
@@ -112,6 +114,9 @@ function Home() {
         </div>
       </section>
 
+      {/* Engineered Packages & UPS Benefits */}
+      <EngineeredPackagesSection />
+
       {/* Services preview */}
       <section className="bg-surface py-24 sm:py-32">
         <div className="container-x">
@@ -119,7 +124,7 @@ function Home() {
             <SectionHeading
               eyebrow="What We Do"
               title="Services that keep power available."
-              intro="Installation, maintenance and support for UPS systems and industrial batteries."
+              intro="Lifecycle engineering, commissioning, preventive maintenance, and battery health management across India."
             />
             <Reveal delay={0.12}>
               <Link
@@ -133,40 +138,52 @@ function Home() {
 
           <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <motion.article
-                key={service.slug}
-                variants={staggerChild}
-                className="group overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
-              >
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-7">
-                  <h3 className="text-lg font-bold">{service.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {service.short}
-                  </p>
-                </div>
-              </motion.article>
+              <motion.div key={service.slug} variants={staggerChild} className="h-full">
+                <Link
+                  to="/services/$service"
+                  params={{ service: service.slug }}
+                  className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card"
+                >
+                  <div>
+                    <div className="aspect-[16/10] overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-7">
+                      <h3 className="text-lg font-bold transition-colors group-hover:text-primary">
+                        {service.name}
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        {service.short}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="px-7 pb-7">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-primary">
+                      View Service Details
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </Stagger>
         </div>
       </section>
 
-      {/* Why choose Electrosys */}
+      {/* Why choose Electrosys / Trust Grid */}
       <section className="py-24 sm:py-32">
         <div className="container-x">
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <div className="lg:sticky lg:top-32 lg:self-start">
               <SectionHeading
-                eyebrow="Why Electrosys"
-                title="A steady partner for critical power."
-                intro="The reasons clients stay with us. Final wording and any figures to be confirmed."
+                eyebrow="Why Organisations Trust Electrosys"
+                title="Proven performance in high-dependency environments."
+                intro="Over 30 years of electrical safety leadership and 3,000+ deployed systems backed by nationwide in-house engineering."
               />
               <RevealImage
                 src={hero1}
@@ -179,7 +196,7 @@ function Home() {
             </div>
 
             <Stagger className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2">
-              {whyPoints.map((point, i) => (
+              {whyTrustPoints.map((point, i) => (
                 <motion.div
                   key={point.title}
                   variants={staggerChild}
@@ -202,12 +219,12 @@ function Home() {
         <div className="container-x">
           <SectionHeading
             eyebrow="Products & Brands"
-            title="Industry-Leading Brands."
-            intro="We work with established manufacturers across UPS systems, industrial batteries and power equipment. Select a brand to see its products."
+            title="Industry-Leading Manufacturer Partnerships."
+            intro="We supply and support world-class UPS systems, industrial batteries, and power conditioning equipment. Select a brand to explore product lines."
             align="center"
           />
-          <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {brands.map((brand) => (
+          <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {brands.slice(0, 8).map((brand) => (
               <BrandCard key={brand.slug} brand={brand} />
             ))}
           </Stagger>
@@ -216,11 +233,14 @@ function Home() {
               to="/products"
               className="inline-flex rounded-full bg-primary px-8 py-4 text-[0.75rem] font-bold tracking-[0.14em] uppercase text-primary-foreground shadow-green transition-transform duration-200 hover:-translate-y-0.5"
             >
-              View All Products
+              View All 15 Partner Brands
             </Link>
           </Reveal>
         </div>
       </section>
+
+      {/* UPS Knowledge & FAQ Section */}
+      <UpsFaqSection />
 
       <ContactCta />
     </>

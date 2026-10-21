@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, Stagger } from "@/components/site/Reveal";
 import { BrandCard } from "@/components/site/BrandCard";
 import { ContactCta, PageHero, SectionHeading } from "@/components/site/Sections";
+import { EngineeredPackagesSection } from "@/components/site/EngineeredPackagesSection";
+import { UpsFaqSection } from "@/components/site/UpsFaqSection";
 import { brands } from "@/data/brands";
 import hero3 from "@/assets/hero-3.jpg";
 
@@ -12,7 +14,7 @@ export const Route = createFileRoute("/products/")({
       {
         name: "description",
         content:
-          "Browse the UPS systems, industrial batteries and power equipment brands supplied by Electrosys. Select a brand for products, specifications and enquiries.",
+          "Browse UPS systems, industrial batteries and engineered power equipment supplied and integrated by Electrosys across India.",
       },
       { property: "og:title", content: "Products & Supplier Partnerships — Electrosys" },
       {
@@ -29,14 +31,15 @@ export const Route = createFileRoute("/products/")({
 });
 
 function Products() {
-  const categories = Array.from(new Set(brands.map((b) => b.category)));
+  const upsBrands = brands.filter((b) => b.category === "UPS Systems");
+  const batteryBrands = brands.filter((b) => b.category === "Industrial Batteries");
 
   return (
     <>
       <PageHero
-        eyebrow="Products"
-        title="Products & Supplier Partnerships."
-        intro="A showcase of the manufacturers we work with. Every brand page lists products, specifications and a direct enquiry route — no online ordering."
+        eyebrow="Products & Systems"
+        title="Engineered UPS & Power Protection Products."
+        intro="Showcasing world-class UPS manufacturers, battery technologies, and power conditioning systems configured to your site's operational needs."
         image={hero3}
         imageAlt="Modern power distribution facility"
       />
@@ -44,33 +47,56 @@ function Products() {
       <section className="py-24 sm:py-32">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Our Brands"
-            title="Equipment from manufacturers we trust."
-            intro="Select a brand to view its products, specifications and partnership details."
+            eyebrow="Our Brands & Partners"
+            title="Equipment from industry-leading manufacturers."
+            intro="Select any partner brand to explore technical product specifications, topologies, and direct enquiry options."
           />
 
-          {categories.map((category, ci) => (
-            <div key={category} className="mt-16">
-              <Reveal>
-                <h3 className="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-muted-foreground">
-                  {category}
+          {/* UPS Systems Brands */}
+          <div className="mt-16">
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-[#00A3E0]" />
+                <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-slate-800">
+                  UPS Systems ({upsBrands.length} Brands)
                 </h3>
-                <span className="mt-4 block h-px w-full bg-border" aria-hidden="true" />
-              </Reveal>
-              <Stagger className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {brands
-                  .filter((b) => b.category === category)
-                  .map((brand) => (
-                    <BrandCard key={brand.slug} brand={brand} />
-                  ))}
-              </Stagger>
-              {ci === categories.length - 1 && null}
-            </div>
-          ))}
+              </div>
+              <span className="mt-4 block h-px w-full bg-slate-200" aria-hidden="true" />
+            </Reveal>
+            <Stagger className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {upsBrands.map((brand) => (
+                <BrandCard key={brand.slug} brand={brand} />
+              ))}
+            </Stagger>
+          </div>
+
+          {/* Industrial Battery Brands */}
+          <div className="mt-20">
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-primary" />
+                <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-slate-800">
+                  Industrial Batteries & Monitoring ({batteryBrands.length} Brands)
+                </h3>
+              </div>
+              <span className="mt-4 block h-px w-full bg-slate-200" aria-hidden="true" />
+            </Reveal>
+            <Stagger className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {batteryBrands.map((brand) => (
+                <BrandCard key={brand.slug} brand={brand} />
+              ))}
+            </Stagger>
+          </div>
         </div>
       </section>
 
-      <ContactCta title="Looking for a product we haven't listed?" />
+      {/* Engineered UPS Packages Section */}
+      <EngineeredPackagesSection />
+
+      {/* UPS Knowledge & FAQs */}
+      <UpsFaqSection />
+
+      <ContactCta title="Looking for a specific UPS model or custom battery sizing?" />
     </>
   );
 }

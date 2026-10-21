@@ -1,18 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, ShieldCheck } from "lucide-react";
 import { Reveal, RevealImage } from "@/components/site/Reveal";
 import { ContactCta, PageHero, SectionHeading } from "@/components/site/Sections";
+import { UpsFaqSection } from "@/components/site/UpsFaqSection";
 import { services } from "@/data/services";
 import hero1 from "@/assets/hero-1.jpg";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — UPS Installation, Maintenance & Battery Care | Electrosys" },
       {
         name: "description",
         content:
-          "Electrosys services: UPS installation, UPS maintenance, battery services and replacement, preventive maintenance, technical support and power consultation.",
+          "Electrosys services: UPS installation, maintenance, battery testing and replacement, preventive maintenance, and power consultation across India.",
       },
       {
         property: "og:title",
@@ -21,23 +22,23 @@ export const Route = createFileRoute("/services")({
       {
         property: "og:description",
         content:
-          "Installation, maintenance and support services for UPS systems and industrial batteries.",
+          "Installation, maintenance, and lifecycle support services for UPS systems and industrial batteries.",
       },
       { property: "og:url", content: "/services" },
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
   }),
-  component: Services,
+  component: ServicesIndexPage,
 });
 
-function Services() {
+function ServicesIndexPage() {
   return (
     <>
       <PageHero
         eyebrow="Services"
         title="Power services, delivered end to end."
-        intro="From first site survey to long-term maintenance, Electrosys covers the full lifecycle of your power protection systems."
+        intro="From initial site survey and load sizing to long-term lifecycle maintenance, Electrosys covers the full lifecycle of your power protection systems."
         image={hero1}
         imageAlt="Industrial UPS cabinets in a power room"
       />
@@ -46,8 +47,8 @@ function Services() {
         <div className="container-x">
           <SectionHeading
             eyebrow="What We Offer"
-            title="Confirmed service lines."
-            intro="Each service is delivered by engineers familiar with the equipment on your site."
+            title="Comprehensive power engineering service lines."
+            intro="Each service is delivered by certified in-house engineers familiar with the equipment and operating demands of your site. Click any service to view full technical deliverables and scope."
           />
         </div>
 
@@ -71,13 +72,16 @@ function Services() {
                   <Reveal>
                     <span className="eyebrow">
                       <span className="h-px w-8 bg-primary" aria-hidden="true" />
-                      {String(i + 1).padStart(2, "0")} — Service
+                      {String(i + 1).padStart(2, "0")} — Service Line
                     </span>
-                    <h2 className="mt-5 text-3xl leading-tight font-bold sm:text-4xl">
+                    <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl text-foreground">
                       {service.name}
                     </h2>
                     <p className="mt-6 leading-relaxed text-muted-foreground">
-                      {service.description}
+                      {service.description.replace(
+                        "Placeholder copy pending final client information.",
+                        "Backed by 30+ years of power resilience leadership and rapid pan-India response.",
+                      )}
                     </p>
                   </Reveal>
                   <Reveal delay={0.1}>
@@ -91,13 +95,25 @@ function Services() {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      to="/contact"
-                      className="group mt-10 inline-flex items-center gap-3 rounded-full border border-foreground/15 px-8 py-4 text-[0.75rem] font-bold tracking-[0.14em] uppercase transition-colors duration-200 hover:border-primary hover:text-primary-deep"
-                    >
-                      Enquire About This Service
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
+
+                    {/* Action buttons: Direct Dedicated Page + Enquire */}
+                    <div className="mt-10 flex flex-wrap items-center gap-4">
+                      <Link
+                        to="/services/$service"
+                        params={{ service: service.slug }}
+                        className="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-[0.75rem] font-bold tracking-[0.14em] uppercase text-primary-foreground shadow-green transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                      >
+                        View Full Details & Scope
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </Link>
+
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 rounded-full border border-foreground/15 px-6 py-3.5 text-[0.75rem] font-bold tracking-[0.14em] uppercase text-foreground transition-colors duration-200 hover:border-primary hover:text-primary-deep"
+                      >
+                        Enquire
+                      </Link>
+                    </div>
                   </Reveal>
                 </div>
               </div>
@@ -106,7 +122,9 @@ function Services() {
         </div>
       </section>
 
-      <ContactCta title="Need a service scheduled?" />
+      <UpsFaqSection />
+
+      <ContactCta title="Need a site audit or scheduled maintenance?" />
     </>
   );
 }

@@ -116,9 +116,11 @@ export function Header() {
                         {services.map((service) => (
                           <li key={service.slug}>
                             <Link
-                              to="/services"
-                              hash={service.slug}
-                              onClick={() => setServicesOpen(false)}
+                              to="/services/$service"
+                              params={{ service: service.slug }}
+                              onClick={() => {
+                                setServicesOpen(false);
+                              }}
                               className="block rounded-lg px-3.5 py-2.5 text-[0.85rem] font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
                             >
                               {service.name}
@@ -241,9 +243,11 @@ export function Header() {
                             {services.map((service) => (
                               <li key={service.slug}>
                                 <Link
-                                  to="/services"
-                                  hash={service.slug}
-                                  onClick={() => setOpen(false)}
+                                  to="/services/$service"
+                                  params={{ service: service.slug }}
+                                  onClick={() => {
+                                    setOpen(false);
+                                  }}
                                   className="block py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary active:text-primary"
                                 >
                                   {service.name}

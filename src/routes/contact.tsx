@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { PageHero, SectionHeading } from "@/components/site/Sections";
 import { ContactForm } from "@/components/site/ContactForm";
+import { UpsFaqSection } from "@/components/site/UpsFaqSection";
 import { addressLines, mailHref, site, telHref, whatsappHref } from "@/lib/site";
 import hero2 from "@/assets/hero-2.jpg";
 
@@ -13,12 +14,12 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Electrosys for UPS systems, industrial batteries, installation and maintenance. Phone, WhatsApp, email or send an enquiry form.",
+          "Contact Electrosys for UPS systems, battery solutions, site audits, and maintenance enquiries. Email sales@electrosys.in or call our team.",
       },
       { property: "og:title", content: "Contact Us — Electrosys Power Solutions" },
       {
         property: "og:description",
-        content: "Get in touch with the Electrosys team about your power requirements.",
+        content: "Get in touch with the Electrosys team about your power resilience requirements.",
       },
       { property: "og:url", content: "/contact" },
       { property: "og:type", content: "website" },
@@ -38,15 +39,15 @@ function Contact() {
       href: whatsappHref(),
       external: true,
     },
-    { icon: Mail, label: "Email", value: site.email, href: mailHref },
+    { icon: Mail, label: "Official Sales Email", value: site.email, href: mailHref },
   ];
 
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Contact Us."
-        intro="Tell us about your site, load and timescales — we'll come back with the right options."
+        eyebrow="Contact Electrosys"
+        title="Contact Our Engineering Team."
+        intro="Tell us about your facility, connected load, and autonomy requirements — our technical team will provide tailored solutions."
         image={hero2}
         imageAlt="Engineer working on an industrial battery installation"
       />
@@ -58,7 +59,7 @@ function Contact() {
             <SectionHeading
               eyebrow="Get in Touch"
               title="Talk to the Electrosys team."
-              intro="Placeholder contact details — replace with the client's confirmed information."
+              intro="Our engineers provide nationwide consultancy, site surveys, and fast turnaround on commercial quotes."
             />
           </div>
 
@@ -89,7 +90,7 @@ function Contact() {
                   <MapPin className="h-4 w-4 text-primary-deep" aria-hidden="true" />
                 </span>
                 <span className="mt-5 text-[0.68rem] font-bold tracking-[0.16em] uppercase text-muted-foreground">
-                  Business Address
+                  Business Presence
                 </span>
                 <address className="mt-2 text-sm leading-relaxed font-medium not-italic">
                   {addressLines.map((line) => (
@@ -111,17 +112,24 @@ function Contact() {
         </div>
       </section>
 
-      {/* Map */}
+      {/* Location Map */}
       <section className="bg-surface py-24 sm:py-28">
         <div className="container-x">
-          <SectionHeading eyebrow="Location" title="Find us." />
-          <Reveal delay={0.1} className="mt-10 overflow-hidden rounded-3xl border border-border">
+          <SectionHeading
+            eyebrow="Location"
+            title="Find us."
+            intro="Visit our facility or get in touch for site visits and engineering surveys."
+          />
+          <Reveal
+            delay={0.1}
+            className="mt-10 overflow-hidden rounded-3xl border border-border shadow-sm"
+          >
             <iframe
               title="Electrosys location map"
               src={site.mapEmbedUrl}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="h-[380px] w-full sm:h-[460px]"
+              className="h-[380px] w-full border-0 sm:h-[460px]"
             />
           </Reveal>
         </div>
@@ -132,9 +140,9 @@ function Contact() {
         <div className="container-x grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
             <SectionHeading
-              eyebrow="Message Us"
+              eyebrow="Direct Enquiry"
               title="Send an enquiry."
-              intro="Share a few details and the right person will respond. Required fields are marked."
+              intro="Share your load sizing, runtime requirement, or service request. Our engineering team responds promptly."
             />
           </div>
           <Reveal delay={0.08}>
@@ -142,6 +150,9 @@ function Contact() {
           </Reveal>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <UpsFaqSection />
     </>
   );
 }
